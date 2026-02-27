@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Miller | Portfólio Artístico</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#81af91", // Verde suave
+                        dark: "#252426",    // Chumbo/Cinza escuro
+                        light: "#F5F9FF",   // Off-white quente
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F5F9FF; color: #252426; }
+        
+        /* Formas Orgânicas - Sem bordas duras */
+        .organic-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .organic-card {
+            border-radius: 12px 32px 16px 24px;
+        }
+        .organic-img {
+            border-radius: 16px 24px 8px 32px;
+        }
+
+        /* Manchas de cor difusas (Glowy Blobs) */
+        .blob-bg {
+            position: absolute;
+            background: linear-gradient(135deg, #81af91 0%, rgba(129, 175, 145, 0.4) 100%);
+            filter: blur(60px);
+            z-index: 0;
+            opacity: 0.35;
+            border-radius: 50% 60% 40% 70% / 60% 40% 70% 50%;
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+        .blob-1 { width: 400px; height: 400px; top: -100px; left: -100px; }
+        .blob-2 { width: 300px; height: 300px; bottom: 10%; right: -50px; }
+
+        @keyframes morph {
+            0% { border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; transform: scale(1) rotate(0deg); }
+            100% { border-radius: 60% 40% 30% 70% / 40% 70% 30% 60%; transform: scale(1.1) rotate(10deg); }
+        }
+
+        .section-padding { padding-top: 6rem; padding-bottom: 6rem; }
+    </style>
+</head>
+<body class="font-montserrat relative overflow-x-hidden">
+
+    <header class="fixed w-full top-0 z-50 bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border-b border-gray-200/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-dark tracking-wider hover:text-primary transition-colors uppercase">Will Miller</a>
+            
+            <ul class="hidden md:flex space-x-6 text-sm font-semibold uppercase tracking-wide">
+                <li><a href="#home" class="text-dark hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#sobre" class="text-dark hover:text-primary transition-colors">Sobre</a></li>
+                <li><a href="#palco-tela" class="text-dark hover:text-primary transition-colors">Palco e Tela</a></li>
+                <li><a href="#literatura" class="text-dark hover:text-primary transition-colors">Literatura</a></li>
+                <li><a href="#educacao" class="text-dark hover:text-primary transition-colors">Arte-Educação</a></li>
+                <li><a href="#producao" class="text-dark hover:text-primary transition-colors">Produção</a></li>
+                <li><a href="#contato" class="text-dark hover:text-primary transition-colors">Contato</a></li>
+            </ul>
+
+            <button id="mobile-menu-btn" class="md:hidden text-dark text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden bg-light border-b border-gray-200">
+            <ul class="flex flex-col space-y-4 px-6 py-4 font-semibold uppercase text-sm">
+                <li><a href="#home" class="block text-dark hover:text-primary">Home</a></li>
+                <li><a href="#sobre" class="block text-dark hover:text-primary">Sobre</a></li>
+                <li><a href="#palco-tela" class="block text-dark hover:text-primary">Palco e Tela</a></li>
+                <li><a href="#literatura" class="block text-dark hover:text-primary">Literatura</a></li>
+                <li><a href="#educacao" class="block text-dark hover:text-primary">Arte-Educação</a></li>
+                <li><a href="#producao" class="block text-dark hover:text-primary">Produção</a></li>
+                <li><a href="#contato" class="block text-dark hover:text-primary">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="relative bg-dark min-h-screen flex items-center pt-20 overflow-hidden text-gray-100">
+        <div class="blob-bg blob-1"></div>
+        <div class="blob-bg blob-2" style="background: rgba(129, 175, 145, 0.2);"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 uppercase text-white tracking-tight">Will Miller</h1>
+                <p class="text-xl md:text-2xl font-light text-primary mb-6">Ator • Diretor • Escritor • Educador • Produtor</p>
+                <p class="font-roboto text-gray-300 mb-8 max-w-lg leading-relaxed">
+                    Atuo na criação de narrativas pelo corpo, pela imagem e pela palavra. Projetos culturais, pesquisa, cinema e palcos.
+                </p>
+                <a href="#portfolio.pdf" class="inline-block bg-primary text-dark font-bold px-8 py-4 organic-shape hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg shadow-primary/20">
+                    Baixar Portfólio (PDF)
+                </a>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <img src="URL_DA_SUA_FOTO_DE_PERFIL" alt="Will Miller" class="w-full h-full object-cover organic-shape border-4 border-primary/20 shadow-2xl relative z-10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-padding bg-light relative">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold uppercase text-dark mb-12 text-center">Sobre Mim</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">O Artista</h3>
+                    <p class="font-roboto text-dark leading-relaxed mb-6">
+                        COLE AQUI A SUA BIOGRAFIA COMPLETA ("Ator de teatro e cinema, pesquisador e arte-educador...")
+                    </p>
+                    <p class="font-roboto text-dark"><strong>Idade:</strong> 24 anos | <strong>Altura:</strong> 1,74m</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">Formação Acadêmica</h3>
+                        <div class="mb-3">
+                            <h4 class="font-bold">Graduação em Teatro (2020-2026)</h4>
+                            <p class="font-roboto text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Intercâmbio em Artes Audiovisuais (2025)</h4>
+                            <p class="font-roboto text-gray-600">Universidad Nacional de La Plata - Argentina</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">Habilidades Técnicas</h3>
+                        <div class="flex flex-wrap gap-3 font-roboto">
+                            <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Adobe InDesign</span>
+                            <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Premiere & After Effects</span>
+                            <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Violão & Xequerê</span>
+                            <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Escrita Criativa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="palco-tela" class="section-padding bg-white relative">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-4xl font-bold uppercase text-dark mb-16 text-center">Palco e Tela</h2>
+            
+            <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4">Atuação</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
+                    <img src="URL_IMAGEM_ANA_GUASU" alt="Aña Guasu" class="w-full h-48 object-cover organic-img mb-4">
+                    <h4 class="text-xl font-bold uppercase">Aña Guasu</h4>
+                    <p class="font-roboto text-gray-600 text-sm mb-2">De Lautaro Zarate, 2025 | Curta-metragem</p>
+                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Terror</p>
+                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Mark (protagonista)</p>
+                </article>
+                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
+                    <img src="URL_IMAGEM_7AM" alt="7 AM" class="w-full h-48 object-cover organic-img mb-4">
+                    <h4 class="text-xl font-bold uppercase">7 AM</h4>
+                    <p class="font-roboto text-gray-600 text-sm mb-2">De Valiere Bello, 2025 | Curta-metragem</p>
+                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Thriller Psicológico</p>
+                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Esteban (protagonista)</p>
+                </article>
+                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
+                    <img src="URL_IMAGEM_MAE_CORAGEM" alt="Mãe Coragem" class="w-full h-48 object-cover organic-img mb-4">
+                    <h4 class="text-xl font-bold uppercase">Esta Noite Mãe Coragem</h4>
+                    <p class="font-roboto text-gray-600 text-sm mb-2">De Antonio Hildebrando, 2023 | Espetáculo</p>
+                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Cabaret</p>
+                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Tôca</p>
+                </article>
+            </div>
+
+            <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4">Direção</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg flex flex-col md:flex-row gap-4 items-center">
+                    <img src="URL_IMAGEM_INTERIM" alt="Interim" class="w-full md:w-40 h-40 object-cover organic-img">
+                    <div>
+                        <h4 class="text-xl font-bold uppercase">Interim</h4>
+                        <p class="font-roboto text-gray-600 text-sm mb-1">De Ray Ariana, 2024 | Cena Curta</p>
+                        <p class="font-roboto text-dark"><strong>Gênero:</strong> Drama Contemporâneo</p>
+                        <p class="font-roboto text-primary font-semibold mt-2">Direção de Elenco: Will Miller</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="literatura" class="section-padding bg-[#E07A5F]/10 relative">
+        <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="URL_FOTO_LIVRO_TERRA_FUNDA" alt="Livro Terra Funda" class="w-full organic-shape shadow-xl">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-4xl font-bold uppercase text-dark mb-2">Terra Funda</h2>
+                <p class="text-lg text-[#E07A5F] font-bold mb-6">Lançamento 2025</p>
+                <p class="font-roboto text-dark leading-relaxed mb-8 text-lg">
+                    "Um mergulho no solo vivo da memória, onde afetos, brincadeiras e resistências de um povo negro se entrelaçam como raízes..."
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="bg-primary text-dark font-bold px-6 py-3 organic-card hover:bg-dark hover:text-white transition-colors">
+                        Comprar Físico
+                    </a>
+                    <a href="#" class="bg-transparent border-2 border-primary text-dark font-bold px-6 py-3 organic-card hover:bg-primary transition-colors">
+                        Amazon Kindle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="educacao" class="section-padding bg-light">
+        <div class="container mx-auto px-6 max-w-5xl">
+            
+            <div class="mb-20">
+                <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Arte-Educação</h2>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
+                        <h3 class="text-xl font-bold uppercase mb-1">Centro Cultural Banco do Brasil (CCBB-BH)</h3>
+                        <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Cultural (2024-2025)</p>
+                        <p class="font-roboto text-gray-700">Atuação na comunicação entre obras e público visitante; criação de narrativas e roteiros para visitas guiadas, mediação para público diverso.</p>
+                    </div>
+                    <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
+                        <h3 class="text-xl font-bold uppercase mb-1">Museu de História Natural (MHNJB)</h3>
+                        <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Museal (2023-2024)</p>
+                        <p class="font-roboto text-gray-700">Mediação, idealização e roteirização da série autoral "Contos e Ecologias"; criação de conteúdos para divulgação científica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="producao" class="pt-10">
+                <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Produção Cultural</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 organic-card shadow-sm">
+                        <h3 class="font-bold uppercase">Ori Ojurere Mi (Curta)</h3>
+                        <p class="font-roboto text-sm text-gray-500 mb-2">Fundo Municipal de Cultura FMC/BH</p>
+                        <p class="font-roboto text-dark">Assistente de Produção</p>
+                    </div>
+                    <div class="bg-white p-6 organic-card shadow-sm">
+                        <h3 class="font-bold uppercase">Conexões Não Táteis (Websérie)</h3>
+                        <p class="font-roboto text-sm text-gray-500 mb-2">Lei Aldir Blanc</p>
+                        <p class="font-roboto text-dark">Roteirista e Produtor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-padding bg-dark text-white relative overflow-hidden">
+        <div class="blob-bg blob-1" style="bottom: 0; top: auto;"></div>
+        <div class="container mx-auto px-6 max-w-6xl relative z-10 text-center">
+            
+            <h2 class="text-5xl md:text-6xl font-extrabold uppercase mb-8">Vamos Trabalhar Juntos?</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+                <a href="mailto:silvawilyleite@gmail.com" class="flex items-center justify-center gap-3 text-xl hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-primary"></i> silvawilyleite@gmail.com
+                </a>
+                <a href="tel:+5531982811162" class="flex items-center justify-center gap-3 text-xl hover:text-primary transition-colors">
+                    <i class="fab fa-whatsapp text-primary"></i> (31) 98281-1162
+                </a>
+            </div>
+
+            <h3 class="text-2xl font-bold uppercase mb-8 text-primary">Galeria</h3>
+            <div class="columns-2 md:columns-3 gap-4 space-y-4">
+                <img src="https://picsum.photos/400/600" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://picsum.photos/400/400" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://picsum.photos/400/500" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="https://picsum.photos/400/700" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
