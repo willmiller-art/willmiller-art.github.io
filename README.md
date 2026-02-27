@@ -15,8 +15,9 @@ Você pode visualizar a versão ao vivo do site através do link:
 ## Direitos Autorais
 
 © 2026 Will Miller. Todos os direitos reservados.
-
 O código-fonte, o design e o conteúdo deste portfólio são de minha propriedade exclusiva. Caso queira utilizar algum trecho ou inspiração, entre em contato.
+
 ---
 
 *Desenvolvido como plataforma de apresentação profissional.*
+
