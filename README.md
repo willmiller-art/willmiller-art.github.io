@@ -12,5 +12,11 @@ Este é o repositório do meu portfólio pessoal, onde apresento meus trabalhos 
 Você pode visualizar a versão ao vivo do site através do link:
 [https://willmiller-art.github.io/](https://willmiller-art.github.io/)
 
+## Direitos Autorais
+
+© 2026 Will Miller. Todos os direitos reservados.
+
+O código-fonte, o design e o conteúdo deste portfólio são de minha propriedade exclusiva. Caso queira utilizar algum trecho ou inspiração, entre em contato.
 ---
+
 *Desenvolvido como plataforma de apresentação profissional.*
