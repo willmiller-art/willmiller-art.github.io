@@ -16,10 +16,9 @@ O site foi desenvolvido com foco em performance, experiência do usuário e um d
 
 ## Acesso
 Você pode visualizar a versão ao vivo do site aqui:
-[**willmiller-art.github.io**](https://willmiller-art.github.io/)
+[**willmiller.com.br**](https://willmiller.com.br/)
 
 ## Direitos Autorais
 © 2026 Will Miller. Todos os direitos reservados.
 
-O código-fonte, o design e o conteúdo deste portfólio são de minha propriedade exclusiva. Caso queira utilizar algum trecho ou inspiração, entre em contato.
-
+Este projeto, incluindo seu código-fonte, design e conteúdo, é de propriedade intelectual exclusiva do autor. A reprodução, distribuição, cópia ou qualquer outro uso de partes deste projeto sem autorização expressa é estritamente proibido.
