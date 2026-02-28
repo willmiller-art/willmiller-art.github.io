@@ -108,11 +108,11 @@
     </header>
 
 
-    <section id="home" class="relative bg-dark min-h-screen flex items-center pt-20 overflow-hidden text-gray-100">
+    <section id="home" class="relative bg-dark min-h-screen flex items-center pt-20 pb-24 md:pb-0 overflow-hidden text-gray-100">
         <div class="blob-bg blob-1"></div>
         <div class="blob-bg blob-2" style="background: rgba(129, 175, 145, 0.2);"></div>
         
-        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div class="w-full md:w-1/2">
                 <h1 class="text-5xl md:text-7xl font-bold mb-4 uppercase text-white tracking-tight">Will Miller</h1>
                 <p class="text-xl md:text-2xl font-light text-primary mb-6">Ator • Diretor • Escritor • Educador • Produtor</p>
@@ -120,13 +120,13 @@
                     Atuo na criação de narrativas pelo corpo, pela imagem e pela palavra. Projetos culturais, pesquisa, cinema e palcos.
                 </p>
                 
-                <div class="flex flex-col items-start gap-3">
+                <div class="flex flex-col items-center md:items-start gap-3 w-full">
                     
                     <a href="https://drive.google.com/uc?export=download&id=1AUIMO5EzZ4_eN7VPJtxtxLYd1Aad-Vna" download="Portfólio_Will_Miller.pdf" target="_blank" class="bg-primary text-dark font-bold px-6 py-3 organic-card hover:bg-white hover:text-dark transition-colors inline-block">
                         Baixar Portfólio (PDF)
                     </a>
                     
-                    <div class="flex items-center gap-4 ml-2 mt-1">
+                    <div class="flex items-center justify-center md:justify-start gap-4 md:ml-2 mt-1">
                         <a href="mailto:silvawilyleite@gmail.com" class="text-white/50 hover:text-primary transition-all duration-300 text-2xl hover:scale-110" aria-label="Enviar E-mail">
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -142,10 +142,10 @@
                 <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl cursor-pointer swiper profileSwiper group transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaPerfil()">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12">
+                            <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 md:scale-[1.8] md:translate-y-10 md:-translate-x-12">
                         </div>
                         <div class="swiper-slide">
-                            <img src="assets/url-img-perfil-3.png" alt="Will Miller" class="w-full h-full object-cover scale-[1.1] -translate-y-6 -translate-x-1">
+                            <img src="assets/url-img-perfil-3.png" alt="Will Miller" class="w-full h-full object-cover scale-[1.2] translate-y-1 translate-x-0 md:scale-[1.1] md:-translate-y-6 md:-translate-x-1">
                         </div>
                     </div>
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-dark/70 text-white text-[10px] px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
@@ -527,6 +527,17 @@
                 delay: 3000,
                 disableOnInteraction: false,
             },
+            // BREAKPOINTS: Regras diferentes por tamanho de tela
+            breakpoints: {
+                // Quando a tela for MENOR que 768px (Mobile)
+                0: {
+                    centeredSlides: true, 
+                },
+                // Quando a tela for MAIOR ou IGUAL a 768px (Desktop/Tablet)
+                768: {
+                    centeredSlides: false, // Desliga a centralização no PC para o loop funcionar
+                }
+            }
         });
 
         // Carrossel da Foto de Perfil (Home)
