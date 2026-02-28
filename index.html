@@ -3,13 +3,13 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will Miller | Portfólio Artístico</title>
+    <title>Will Miller | Site</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -33,16 +33,16 @@
     <style>
         body { background-color: #F5F9FF; color: #252426; }
         
+        /* Espaçamento Global */
+        .section-padding { padding-top: 6rem; padding-bottom: 6rem; }
+
         /* Formas Orgânicas */
-        .organic-shape {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        }
-        .organic-card {
-            border-radius: 12px 32px 16px 24px;
-        }
-        .organic-img {
-            border-radius: 16px 24px 8px 32px;
-        }
+        .organic-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        .organic-card { border-radius: 12px 32px 16px 24px; }
+        .organic-img { border-radius: 16px 24px 8px 32px; }
+        
+        /* Novo Formato Ultra-Fluido (Usado no Livro) */
+        .livro-shape { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 
         /* Manchas de cor difusas (Blobs) */
         .blob-bg {
@@ -62,9 +62,17 @@
             100% { border-radius: 60% 40% 30% 70% / 40% 70% 30% 60%; transform: scale(1.1) rotate(10deg); }
         }
 
-        .section-padding { padding-top: 6rem; padding-bottom: 6rem; }
+        /* Estilo para a Paginação Branca em todos os Swipers de Galeria */
+        .galeriaLivroSwiper .swiper-pagination-bullet,
+        .galeriaPerfilSwiper .swiper-pagination-bullet,
+        .galeriaFinalSwiper .swiper-pagination-bullet { background: white; opacity: 0.5; }
+        
+        .galeriaLivroSwiper .swiper-pagination-bullet-active,
+        .galeriaPerfilSwiper .swiper-pagination-bullet-active,
+        .galeriaFinalSwiper .swiper-pagination-bullet-active { opacity: 1; background: white; }
     </style>
 </head>
+
 <body class="font-montserrat relative overflow-x-hidden">
 
     <header class="fixed w-full top-0 z-50 bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border-b border-gray-200/50">
@@ -99,6 +107,7 @@
         </div>
     </header>
 
+
     <section id="home" class="relative bg-dark min-h-screen flex items-center pt-20 overflow-hidden text-gray-100">
         <div class="blob-bg blob-1"></div>
         <div class="blob-bg blob-2" style="background: rgba(129, 175, 145, 0.2);"></div>
@@ -110,17 +119,38 @@
                 <p class="font-roboto text-gray-300 mb-8 max-w-lg leading-relaxed">
                     Atuo na criação de narrativas pelo corpo, pela imagem e pela palavra. Projetos culturais, pesquisa, cinema e palcos.
                 </p>
-                <a href="https://drive.google.com/uc?export=download&id=1AUIMO5EzZ4_eN7VPJtxtxLYd1Aad-Vna" 
-                download="Portfólio_Will_Miller.pdf" 
-                target="_blank" 
-                class="bg-primary text-dark font-bold px-6 py-3 organic-card hover:bg-white hover:text-dark transition-colors">
-                    Baixar Portfólio (PDF)
-                </a>
+                
+                <div class="flex flex-col items-start gap-3">
+                    
+                    <a href="https://drive.google.com/uc?export=download&id=1AUIMO5EzZ4_eN7VPJtxtxLYd1Aad-Vna" download="Portfólio_Will_Miller.pdf" target="_blank" class="bg-primary text-dark font-bold px-6 py-3 organic-card hover:bg-white hover:text-dark transition-colors inline-block">
+                        Baixar Portfólio (PDF)
+                    </a>
+                    
+                    <div class="flex items-center gap-4 ml-2 mt-1">
+                        <a href="mailto:silvawilyleite@gmail.com" class="text-white/50 hover:text-primary transition-all duration-300 text-2xl hover:scale-110" aria-label="Enviar E-mail">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/xwillmiller/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-primary transition-all duration-300 text-2xl hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    
+                </div>
             </div>
             
             <div class="w-full md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl">
-                    <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 relative">
+                <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl cursor-pointer swiper profileSwiper group transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaPerfil()">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/url-img-perfil-3.png" alt="Will Miller" class="w-full h-full object-cover scale-[1.1] -translate-y-6 -translate-x-1">
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-dark/70 text-white text-[10px] px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                        Clique para ampliar
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,8 +161,15 @@
             <h2 class="text-4xl font-bold uppercase text-dark mb-12 text-center">Sobre Mim</h2>
             
             <div class="grid md:grid-cols-2 gap-12">
+                
                 <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">O Artista</h3>
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-semibold text-primary uppercase leading-tight">O Artista</h3>
+                        <a href="URL_DA_SUA_PAGINA_AQUI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
+                            Conheça a trajetória completa <i class="fas fa-arrow-right text-[9px] group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
                     <p class="font-roboto text-dark leading-relaxed mb-6 text-justify">
                         Graduando em Teatro (UFMG), com intercâmbio em Artes Audiovisuais (UNLP/Argentina). Ator de teatro e cinema, pesquisador e arte-educador, atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais, além de forte interesse pela escrita literária. Possuo experiência editorial com Adobe InDesign e edição de video/motion (Adobe Premiere, After Effects e CapCut).
                     </p>
@@ -141,7 +178,13 @@
 
                 <div class="space-y-10">
                     <div>
-                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Formação acadêmica</h3>
+                        <div class="mb-4">
+                            <h3 class="text-xl font-semibold text-primary uppercase leading-tight">Formação acadêmica</h3>
+                            <a href="https://lattes.cnpq.br/6146741416005526" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
+                                Acesse o currículo Lattes <i class="fas fa-external-link-alt text-[9px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
+                            </a>
+                        </div>
+                        
                         <div class="space-y-4">
                             <div>
                                 <h4 class="font-bold text-sm">Graduação em Teatro (2020-2026)</h4>
@@ -190,7 +233,6 @@
 
                 <div class="swiper atuacaoSwiper pb-12 overflow-hidden">
                     <div class="swiper-wrapper">
-                        
                         <article class="swiper-slide bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow flex flex-col" style="width: 320px; height: 450px;">
                             <img src="https://picsum.photos/400/700" alt="Aña Guasu" class="w-full h-48 object-cover organic-img mb-4">
                             <div class="flex-grow">
@@ -229,16 +271,13 @@
                                 <p class="font-roboto text-dark"><strong>Gênero:</strong> Drama contemporâneo</p>
                                 <p class="font-roboto text-dark"><strong>Personagem:</strong> Luan (protagonista)</p>
                             </div>
-                            
                         </article>
-
                     </div>
                 </div>
             </div>
             
             <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4 mt-12">Direção</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
                 <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg flex flex-col md:flex-row gap-4 items-center">
                     <img src="https://picsum.photos/400/700" alt="Interim" class="w-full md:w-40 h-40 object-cover organic-img">
                     <div>
@@ -258,66 +297,85 @@
                         <p class="font-roboto text-primary font-semibold mt-2">Direção de Elenco: Will Miller</p>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>
 
     <section id="literatura" class="section-padding bg-[#E07A5F]/10 relative">
-        <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2">
-                <img src="https://picsum.photos/400/700" alt="Livro Terra Funda" class="w-full organic-shape shadow-xl">
+        <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center md:items-start gap-12">
+            
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-[26rem] md:w-80 md:h-[32rem] overflow-hidden livro-shape shadow-xl cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl group" onclick="abrirGaleriaLivro()">
+                    <img src="assets/url-img-livro-tf-1.jpg" alt="Livro Terra Funda" class="w-full h-full object-cover relative scale-[1.3] -translate-x-0 translate-y-1">
+                    <div class="absolute bottom-8 left-[58%] -translate-x-1/2 bg-dark/70 text-white text-[10px] px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                        Clique para ver mais fotos
+                    </div>
+                </div>
             </div>
+            
             <div class="w-full md:w-1/2">
                 <h2 class="text-4xl font-bold uppercase text-dark mb-2">Terra Funda</h2>
-                <p class="text-lg text-[#E07A5F] font-bold mb-6">Lançamento 2025</p>
-                <p class="font-roboto text-dark leading-relaxed mb-8 text-lg">
-                    "Um mergulho no solo vivo da memória, onde afetos, brincadeiras e resistências de um povo negro se entrelaçam como raízes..."
+                
+                <p class="text-lg font-bold mb-6">
+                    <span class="text-[#E07A5F]">Lançamento 2025</span> 
+                    <span class="text-dark"> • Ed. Pá de Mundo</span>
                 </p>
-                <div class="flex gap-4">
-                    <a href="#" class="bg-primary text-dark font-bold px-6 py-3 organic-card hover:bg-dark hover:text-white transition-colors">
-                        Comprar Físico
-                    </a>
-                    <a href="#" class="bg-transparent border-2 border-primary text-dark font-bold px-6 py-3 organic-card hover:bg-primary transition-colors">
-                        Amazon Kindle
-                    </a>
+                
+                <p class="font-roboto text-dark leading-relaxed mb-8 text-lg text-justify">
+                    "Um mergulho no solo vivo da memória, onde afetos, brincadeiras e resistências de um povo negro se entrelaçam como raízes. Em ato único, dois atuantes dão corpo a quatro personagens em uma narrativa costurada por oralidade, ecologia e ancestralidade. Terra Funda entrelaça lembranças pessoais e coletivas num teatro de denúncia e afeto, que confronta o apagamento das memórias e a devastação ambiental do território. Aqui, cada gesto é semente, cada palavra é terra."
+                </p>
+                
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="group relative block w-full bg-dark text-white font-bold organic-card hover:bg-primary hover:text-dark transition-all duration-500 ease-in-out overflow-hidden max-h-[48px] hover:max-h-[300px]">
+                        <div class="flex items-center justify-center h-[48px] cursor-default">Comprar Físico</div>
+                        <div class="flex flex-col gap-2 px-6 pb-4 pt-0 opacity-0 transition-opacity duration-300 delay-100 group-hover:opacity-100">
+                            <p class="text-[10px] text-white/70 italic text-center -mt-2 mb-1">Redirecionamento para contato ou lojas parceiras.</p>
+                            <a href="https://wa.link/gqcbc1" target="_blank" rel="noopener noreferrer" class="bg-black/10 text-dark px-3 py-2 rounded-full text-xs font-medium hover:shadow-md transition-shadow text-center">Onde comprar em Belo Horizonte</a>
+                            <a href="https://www.instagram.com/conversinhoss" target="_blank" rel="noopener noreferrer" class="bg-black/10 text-dark px-3 py-2 rounded-full text-xs font-medium hover:shadow-md transition-shadow text-center">Onde comprar em Montes Claros</a>
+                            <a href="https://www.instagram.com/centrodeartesanatojanu" target="_blank" rel="noopener noreferrer" class="bg-black/10 text-dark px-3 py-2 rounded-full text-xs font-medium hover:shadow-md transition-shadow text-center">Onde comprar em Januária</a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full">
+                        <a href="https://www.amazon.com.br/Terra-Funda-Will-Miller-ebook/dp/B0FMRVGZS5" target="_blank" rel="noopener noreferrer" class="block flex-1 text-center bg-transparent border-2 border-primary text-dark font-bold px-4 py-3 organic-card hover:bg-primary transition-colors">Amazon Kindle</a>
+                        <a href="https://play.google.com/store/books/details/Wily_Leite_Silva_Terra_Funda?id=EwN_EQAAQBAJ" target="_blank" rel="noopener noreferrer" class="block flex-1 text-center bg-transparent border-2 border-primary text-dark font-bold px-4 py-3 organic-card hover:bg-primary transition-colors">Play Livros</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="educacao" class="section-padding bg-light">
+    <section id="educacao" class="pt-24 pb-12 bg-light">
         <div class="container mx-auto px-6 max-w-5xl">
-            
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Arte-Educação</h2>
-                <div class="space-y-6">
-                    <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
-                        <h3 class="text-xl font-bold uppercase mb-1">Centro Cultural Banco do Brasil (CCBB-BH)</h3>
-                        <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Cultural (2024-2025)</p>
-                        <p class="font-roboto text-gray-700">Atuação na comunicação entre obras e público visitante; criação de narrativas e roteiros para visitas guiadas, mediação para público diverso.</p>
-                    </div>
-                    <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
-                        <h3 class="text-xl font-bold uppercase mb-1">Museu de História Natural (MHNJB)</h3>
-                        <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Museal (2023-2024)</p>
-                        <p class="font-roboto text-gray-700">Mediação, idealização e roteirização da série autoral "Contos e Ecologias"; criação de conteúdos para divulgação científica.</p>
-                    </div>
+            <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Arte-Educação</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
+                    <h3 class="text-xl font-bold uppercase mb-1">Centro Cultural Banco do Brasil (CCBB-BH)</h3>
+                    <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Cultural (2024-2025)</p>
+                    <p class="font-roboto text-gray-700">Atuação na comunicação entre obras e público visitante; criação de narrativas e roteiros para visitas guiadas, mediação para público diverso.</p>
+                </div>
+                <div class="bg-white p-6 organic-card shadow-sm border-l-4 border-primary">
+                    <h3 class="text-xl font-bold uppercase mb-1">Museu de História Natural (MHNJB)</h3>
+                    <p class="text-sm text-primary font-bold mb-3">Educador e Mediador Museal (2023-2024)</p>
+                    <p class="font-roboto text-gray-700">Mediação, idealização e roteirização da série autoral "Contos e Ecologias"; criação de conteúdos para divulgação científica.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div id="producao" class="pt-10">
-                <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Produção Cultural</h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white p-6 organic-card shadow-sm">
-                        <h3 class="font-bold uppercase">Ori Ojurere Mi (Curta)</h3>
-                        <p class="font-roboto text-sm text-gray-500 mb-2">Fundo Municipal de Cultura FMC/BH</p>
-                        <p class="font-roboto text-dark">Assistente de Produção</p>
-                    </div>
-                    <div class="bg-white p-6 organic-card shadow-sm">
-                        <h3 class="font-bold uppercase">Conexões Não Táteis (Websérie)</h3>
-                        <p class="font-roboto text-sm text-gray-500 mb-2">Lei Aldir Blanc</p>
-                        <p class="font-roboto text-dark">Roteirista e Produtor</p>
-                    </div>
+    <section id="producao" class="pt-12 pb-24 bg-light">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold uppercase text-dark mb-10 text-center">Produção Cultural</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 organic-card shadow-sm">
+                    <h3 class="font-bold uppercase">Ori Ojurere Mi (Curta)</h3>
+                    <p class="font-roboto text-sm text-gray-500 mb-2">Fundo Municipal de Cultura FMC/BH</p>
+                    <p class="font-roboto text-dark">Assistente de Produção</p>
+                </div>
+                <div class="bg-white p-6 organic-card shadow-sm">
+                    <h3 class="font-bold uppercase">Conexões Não Táteis (Websérie)</h3>
+                    <p class="font-roboto text-sm text-gray-500 mb-2">Lei Aldir Blanc</p>
+                    <p class="font-roboto text-dark">Roteirista e Produtor</p>
                 </div>
             </div>
         </div>
@@ -329,23 +387,26 @@
             
             <h2 class="text-5xl md:text-6xl font-extrabold uppercase mb-8">Vamos Trabalhar Juntos?</h2>
             
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-16 flex-wrap">
                 <a href="mailto:silvawilyleite@gmail.com" class="flex items-center justify-center gap-3 text-xl hover:text-primary transition-colors">
                     <i class="fas fa-envelope text-primary"></i> silvawilyleite@gmail.com
                 </a>
                 <a href="tel:+5531982811162" class="flex items-center justify-center gap-3 text-xl hover:text-primary transition-colors">
                     <i class="fab fa-whatsapp text-primary"></i> (31) 98281-1162
                 </a>
+                <a href="https://www.instagram.com/xwillmiller/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 text-xl hover:text-primary transition-colors">
+                    <i class="fab fa-instagram text-primary"></i> @xwillmiller
+                </a>
             </div>
 
             <h3 class="text-2xl font-bold uppercase mb-8 text-primary">Galeria</h3>
             <div class="columns-2 md:columns-3 gap-4 space-y-4 pb-12">
-                <img src="assets/url-img-perfil-3.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="assets/url-img-perfil-6.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="assets/url-img-perfil-2.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="assets/url-img-perfil-5.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="assets/url-img-perfil-4.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="assets/url-img-perfil-1.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-3.png" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(0)">
+                <img src="assets/url-img-perfil-6.png" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(1)">
+                <img src="assets/url-img-perfil-2.jpg" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(2)">
+                <img src="assets/url-img-perfil-5.jpg" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(3)">
+                <img src="assets/url-img-perfil-4.png" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(4)">
+                <img src="assets/url-img-livro-tf-4.jpg" class="w-full organic-img cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaFinal(5)">
             </div>
         </div>
     </section>
@@ -356,8 +417,84 @@
         </div>
     </footer>
 
+    <div id="modal-galeria-perfil" class="fixed inset-0 bg-black/95 z-[1000] hidden items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="fecharGaleriaPerfilSeForFora(event)">
+        
+        <button onclick="fecharGaleriaPerfil()" class="absolute top-6 right-8 w-12 h-12 flex items-center justify-center group z-[1100] bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full transition-all">
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors rotate-45"></span>
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors -rotate-45"></span>
+        </button>
+
+        <div class="swiper galeriaPerfilSwiper w-full h-full flex items-center justify-center">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-perfil-2.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-perfil-3.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+    <div id="modal-galeria-livro" class="fixed inset-0 bg-black/95 z-[1000] hidden items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="fecharGaleriaLivroSeForFora(event)">
+        
+        <button onclick="fecharGaleriaLivro()" class="absolute top-6 right-8 w-12 h-12 flex items-center justify-center group z-[1100] bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full transition-all">
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors rotate-45"></span>
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors -rotate-45"></span>
+        </button>
+
+        <div class="swiper galeriaLivroSwiper w-full h-full flex items-center justify-center">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-livro-tf-1.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-livro-tf-6.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-livro-tf-2.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-livro-tf-5.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+    <div id="modal-galeria-final" class="fixed inset-0 bg-black/95 z-[1000] hidden items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="fecharGaleriaFinalSeForFora(event)">
+        
+        <button onclick="fecharGaleriaFinal()" class="absolute top-6 right-8 w-12 h-12 flex items-center justify-center group z-[1100] bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full transition-all">
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors rotate-45"></span>
+            <span class="absolute w-6 h-0.5 bg-dark group-hover:bg-primary transition-colors -rotate-45"></span>
+        </button>
+
+        <div class="swiper galeriaFinalSwiper w-full h-full flex items-center justify-center">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-perfil-3.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-perfil-6.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-perfil-2.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-perfil-5.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-perfil-4.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+                <div class="swiper-slide flex items-center justify-center"><img src="assets/url-img-livro-tf-4.jpg" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-3 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
+        <i class="fas fa-chevron-up text-dark group-hover:text-primary transition-colors text-lg"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
-        // Menu Mobile Toggle
+        // ==========================================
+        // MENU MOBILE
+        // ==========================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         
@@ -370,11 +507,13 @@
                 menu.classList.add('hidden');
             });
         });
-    </script> 
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.atuacaoSwiper', {
+
+        // ==========================================
+        // INICIALIZAÇÃO DE CARROSSEIS ESTÁTICOS
+        // ==========================================
+        
+        // Carrossel de Atuação (Palco e Tela)
+        const atuacaoSwiper = new Swiper('.atuacaoSwiper', {
             slidesPerView: 'auto',
             spaceBetween: 32,
             loop: true,
@@ -384,6 +523,153 @@
                 disableOnInteraction: false,
             },
         });
+
+        // Carrossel da Foto de Perfil (Home)
+        const profileSwiper = new Swiper('.profileSwiper', {
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+        });
+
+        // ==========================================
+        // MODAIS E GALERIAS EM TELA CHEIA
+        // ==========================================
+        
+        // 1. Galeria da Home (Perfil)
+        let galeriaPerfil;
+        
+        function abrirGaleriaPerfil() {
+            const modal = document.getElementById('modal-galeria-perfil');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+
+            if (!galeriaPerfil) {
+                galeriaPerfil = new Swiper('.galeriaPerfilSwiper', {
+                    loop: true,
+                    grabCursor: true,
+                    centeredSlides: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false },
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                });
+            } else {
+                galeriaPerfil.autoplay.start();
+            }
+        }
+
+        function fecharGaleriaPerfil() {
+            const modal = document.getElementById('modal-galeria-perfil');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+            if (galeriaPerfil) galeriaPerfil.autoplay.stop();
+        }
+
+        function fecharGaleriaPerfilSeForFora(event) {
+            if (event.target.id === 'modal-galeria-perfil') fecharGaleriaPerfil();
+        }
+
+
+        // 2. Galeria da Literatura (Livro)
+        let galeriaLivro;
+
+        function abrirGaleriaLivro() {
+            const modal = document.getElementById('modal-galeria-livro');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+
+            if (!galeriaLivro) {
+                galeriaLivro = new Swiper('.galeriaLivroSwiper', {
+                    loop: true,
+                    grabCursor: true,
+                    centeredSlides: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false },
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                });
+            } else {
+                galeriaLivro.update();
+                galeriaLivro.autoplay.start();
+            }
+        }
+
+        function fecharGaleriaLivro() {
+            const modal = document.getElementById('modal-galeria-livro');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+            if (galeriaLivro) galeriaLivro.autoplay.stop();
+        }
+
+        function fecharGaleriaLivroSeForFora(event) {
+            if (event.target.id === 'modal-galeria-livro') fecharGaleriaLivro();
+        }
+
+
+        // 3. Galeria Final (Sessão Contato)
+        let galeriaFinal;
+
+        function abrirGaleriaFinal(index) {
+            const modal = document.getElementById('modal-galeria-final');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+
+            if (!galeriaFinal) {
+                galeriaFinal = new Swiper('.galeriaFinalSwiper', {
+                    loop: true,
+                    grabCursor: true,
+                    centeredSlides: true,
+                    initialSlide: index,
+                    autoplay: { delay: 3000, disableOnInteraction: false },
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                });
+            } else {
+                galeriaFinal.slideToLoop(index, 0); 
+                galeriaFinal.update();
+                galeriaFinal.autoplay.start();
+            }
+        }
+
+        function fecharGaleriaFinal() {
+            const modal = document.getElementById('modal-galeria-final');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+            if (galeriaFinal) galeriaFinal.autoplay.stop();
+        }
+
+        function fecharGaleriaFinalSeForFora(event) {
+            if (event.target.id === 'modal-galeria-final') fecharGaleriaFinal();
+        }
+
+        // ==========================================
+        // BOTÃO VOLTAR AO TOPO (Com sumiço automático)
+        // ==========================================
+        const btnBackToTop = document.getElementById('btn-back-to-top');
+        const sectionSobre = document.getElementById('sobre');
+        let isScrolling; // Variável para guardar o timer
+
+        window.addEventListener('scroll', () => {
+            // 1. Limpa o temporizador antigo toda vez que você rolar a tela
+            window.clearTimeout(isScrolling);
+
+            // 2. Lógica para APARECER: Só aparece se passou da seção "Sobre Mim"
+            if (window.scrollY >= (sectionSobre.offsetTop - 200)) {
+                btnBackToTop.classList.remove('opacity-0', 'pointer-events-none');
+                btnBackToTop.classList.add('opacity-100', 'pointer-events-auto');
+
+                // 3. Temporizador: Define para SUMIR após 2 segundos (2000ms) sem rolagem
+                isScrolling = setTimeout(() => {
+                    btnBackToTop.classList.add('opacity-0', 'pointer-events-none');
+                    btnBackToTop.classList.remove('opacity-100', 'pointer-events-auto');
+                }, 1500); 
+
+            } else {
+                // Se voltar para a Home, garante que o botão suma imediatamente
+                btnBackToTop.classList.add('opacity-0', 'pointer-events-none');
+                btnBackToTop.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
     </script>
+
 </body>
 </html>
