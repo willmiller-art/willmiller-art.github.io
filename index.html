@@ -86,23 +86,23 @@
                 <li><a href="#literatura" class="text-dark hover:text-primary transition-colors">Literatura</a></li>
                 <li><a href="#educacao" class="text-dark hover:text-primary transition-colors">Arte-Educação</a></li>
                 <li><a href="#producao" class="text-dark hover:text-primary transition-colors">Produção</a></li>
-                <li><a href="#contato" class="text-dark hover:text-primary transition-colors">Contato</a></li>
+                <li><a href="#contato" class="text-dark hover:text-primary transition-colors">Contato e Galeria</a></li>
             </ul>
 
-            <button id="mobile-menu-btn" class="md:hidden text-dark text-2xl focus:outline-none">
+            <button id="mobile-menu-btn" class="md:hidden text-dark hover:text-primary transition-colors duration-300 text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
 
-        <div id="mobile-menu" class="hidden bg-light border-b border-gray-200">
+        <div id="mobile-menu" class="md:hidden bg-light border-gray-200 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
             <ul class="flex flex-col space-y-4 px-6 py-4 font-semibold uppercase text-sm">
-                <li><a href="#home" class="block text-dark hover:text-primary">Home</a></li>
-                <li><a href="#sobre" class="block text-dark hover:text-primary">Sobre</a></li>
-                <li><a href="#palco-tela" class="block text-dark hover:text-primary">Palco e Tela</a></li>
-                <li><a href="#literatura" class="block text-dark hover:text-primary">Literatura</a></li>
-                <li><a href="#educacao" class="block text-dark hover:text-primary">Arte-Educação</a></li>
-                <li><a href="#producao" class="block text-dark hover:text-primary">Produção</a></li>
-                <li><a href="#contato" class="block text-dark hover:text-primary">Contato</a></li>
+                <li><a href="#home" class="block text-dark hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#sobre" class="block text-dark hover:text-primary transition-colors">Sobre</a></li>
+                <li><a href="#palco-tela" class="block text-dark hover:text-primary transition-colors">Palco e Tela</a></li>
+                <li><a href="#literatura" class="block text-dark hover:text-primary transition-colors">Literatura</a></li>
+                <li><a href="#educacao" class="block text-dark hover:text-primary transition-colors">Arte-Educação</a></li>
+                <li><a href="#producao" class="block text-dark hover:text-primary transition-colors">Produção</a></li>
+                <li><a href="#contato" class="block text-dark hover:text-primary transition-colors">Contato e Galeria</a></li>
             </ul>
         </div>
     </header>
@@ -493,18 +493,23 @@
     
     <script>
         // ==========================================
-        // MENU MOBILE
+        // MENU MOBILE (Com deslizamento suave)
         // ==========================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         
         btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+            menu.classList.toggle('max-h-0');
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('max-h-[500px]');
+            menu.classList.toggle('opacity-100');
+            menu.classList.toggle('border-b');
         });
 
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden');
+                menu.classList.add('max-h-0', 'opacity-0');
+                menu.classList.remove('max-h-[500px]', 'opacity-100', 'border-b');
             });
         });
 
