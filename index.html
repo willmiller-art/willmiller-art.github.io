@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will Miller | Portfólio Artístico</title>
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,7 +33,7 @@
     <style>
         body { background-color: #F5F9FF; color: #252426; }
         
-        /* Formas Orgânicas - Sem bordas duras */
+        /* Formas Orgânicas */
         .organic-shape {
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
         }
@@ -44,7 +44,7 @@
             border-radius: 16px 24px 8px 32px;
         }
 
-        /* Manchas de cor difusas (Glowy Blobs) */
+        /* Manchas de cor difusas (Blobs) */
         .blob-bg {
             position: absolute;
             background: linear-gradient(135deg, #81af91 0%, rgba(129, 175, 145, 0.4) 100%);
@@ -120,85 +120,127 @@
             
             <div class="w-full md:w-1/2 flex justify-center">
                 <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl">
-                    <img src="assets/foto-de-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 relative">
+                    <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 relative">
                 </div>
             </div>
         </div>
     </section>
 
     <section id="sobre" class="section-padding bg-light relative">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-4xl font-bold uppercase text-dark mb-12 text-center">Sobre Mim</h2>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">O Artista</h3>
-                <p class="font-roboto text-dark leading-relaxed mb-6">
-                    Graduando em Teatro (UFMG), com intercâmbio em Artes Audiovisuais (UNLP/Argentina). Ator de teatro e cinema, pesquisador e arte-educador, atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais, além de forte interesse pela escrita literária. Possuo experiência editorial com Adobe InDesign e edição de video/motion (Adobe Premiere, After Effects e CapCut).
-                </p>
-                <p class="font-roboto text-dark"><strong>Idade:</strong> 24 anos | <strong>Altura:</strong> 1,74m</p>
-            </div>
-
-            <div class="space-y-8">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold uppercase text-dark mb-12 text-center">Sobre Mim</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">Formação Acadêmica</h3>
-                    <div class="mb-3">
-                        <h4 class="font-bold">Graduação em Teatro (2020-2026)</h4>
-                        <p class="font-roboto text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold">Intercâmbio em Artes Audiovisuais (2025)</h4>
-                        <p class="font-roboto text-gray-600">Universidad Nacional de La Plata - Argentina</p>
-                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">O Artista</h3>
+                    <p class="font-roboto text-dark leading-relaxed mb-6 text-justify">
+                        Graduando em Teatro (UFMG), com intercâmbio em Artes Audiovisuais (UNLP/Argentina). Ator de teatro e cinema, pesquisador e arte-educador, atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais, além de forte interesse pela escrita literária. Possuo experiência editorial com Adobe InDesign e edição de video/motion (Adobe Premiere, After Effects e CapCut).
+                    </p>
+                    <p class="font-roboto text-dark"><strong>Idade:</strong> 24 anos | <strong>Altura:</strong> 1,74m</p>
                 </div>
 
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-primary uppercase">Habilidades</h3>
-                    <div class="flex flex-wrap gap-3 font-roboto">
-                        <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Adobe InDesign</span>
-                        <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Premiere & After Effects</span>
-                        <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Violão & Xequerê</span>
-                        <span class="bg-primary/20 text-dark px-4 py-2 rounded-2xl">Escrita Criativa</span>
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Formação acadêmica</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-sm">Graduação em Teatro (2020-2026)</h4>
+                                <p class="text-sm text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
+                                <p class="text-sm text-gray-600">Universidad Nacional de La Plata - Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Idiomas</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Português (Nativo)</span>
+                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Espanhol (Fluente)</span>
+                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Inglês (Básico)</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Competências</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Escrita Criativa</span>
+                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Edição & Motion</span>
+                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Violão</span>
+                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Xequerê</span>
+                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Patins</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="palco-tela" class="section-padding bg-white relative">
         <div class="container mx-auto px-6 max-w-6xl">
             <h2 class="text-4xl font-bold uppercase text-dark mb-16 text-center">Palco e Tela</h2>
             
             <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4">Atuação</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="URL_IMAGEM_ANA_GUASU" alt="Aña Guasu" class="w-full h-48 object-cover organic-img mb-4">
-                    <h4 class="text-xl font-bold uppercase">Aña Guasu</h4>
-                    <p class="font-roboto text-gray-600 text-sm mb-2">De Lautaro Zarate, 2025 | Curta-metragem</p>
-                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Terror</p>
-                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Mark (protagonista)</p>
-                </article>
-                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="URL_IMAGEM_7AM" alt="7 AM" class="w-full h-48 object-cover organic-img mb-4">
-                    <h4 class="text-xl font-bold uppercase">7 AM</h4>
-                    <p class="font-roboto text-gray-600 text-sm mb-2">De Valiere Bello, 2025 | Curta-metragem</p>
-                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Thriller Psicológico</p>
-                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Esteban (protagonista)</p>
-                </article>
-                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow">
-                    <img src="URL_IMAGEM_MAE_CORAGEM" alt="Mãe Coragem" class="w-full h-48 object-cover organic-img mb-4">
-                    <h4 class="text-xl font-bold uppercase">Esta Noite Mãe Coragem</h4>
-                    <p class="font-roboto text-gray-600 text-sm mb-2">De Antonio Hildebrando, 2023 | Espetáculo</p>
-                    <p class="font-roboto text-dark"><strong>Gênero:</strong> Cabaret</p>
-                    <p class="font-roboto text-dark"><strong>Personagem:</strong> Tôca</p>
-                </article>
-            </div>
+            
+            <div class="relative max-w-[1024px] mx-auto">
+                <div class="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
+                <div class="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
 
-            <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4">Direção</h3>
+                <div class="swiper atuacaoSwiper pb-12 overflow-hidden">
+                    <div class="swiper-wrapper">
+                        
+                        <article class="swiper-slide bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow flex flex-col" style="width: 320px; height: 450px;">
+                            <img src="https://picsum.photos/400/700" alt="Aña Guasu" class="w-full h-48 object-cover organic-img mb-4">
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold uppercase">Aña Guasu</h4>
+                                <p class="font-roboto text-gray-600 text-sm mb-2">De Lautaro Zarate, 2025 | Curta</p>
+                                <p class="font-roboto text-dark"><strong>Gênero:</strong> Terror</p>
+                                <p class="font-roboto text-dark"><strong>Personagem:</strong> Mark (protagonista)</p>
+                            </div>
+                        </article>
+
+                        <article class="swiper-slide bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow flex flex-col" style="width: 320px; height: 450px;">
+                            <img src="https://picsum.photos/400/700" alt="7 AM" class="w-full h-48 object-cover organic-img mb-4">
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold uppercase">7 AM</h4>
+                                <p class="font-roboto text-gray-600 text-sm mb-2">De Valiere Bello, 2025 | Curta</p>
+                                <p class="font-roboto text-dark"><strong>Gênero:</strong> Thriller Psicológico</p>
+                                <p class="font-roboto text-dark"><strong>Personagem:</strong> Esteban (protagonista)</p>
+                            </div>
+                        </article>
+
+                        <article class="swiper-slide bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow flex flex-col" style="width: 320px; height: 450px;">
+                            <img src="https://picsum.photos/400/700" alt="Mãe Coragem" class="w-full h-48 object-cover organic-img mb-4">
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold uppercase">Esta Noite Mãe Coragem</h4>
+                                <p class="font-roboto text-gray-600 text-sm mb-2">De Antonio Hildebrando, 2023 | Espetáculo</p>
+                                <p class="font-roboto text-dark"><strong>Gênero:</strong> Cabaret</p>
+                                <p class="font-roboto text-dark"><strong>Personagem:</strong> Tôca</p>
+                            </div>
+                        </article>
+
+                        <article class="swiper-slide bg-light organic-card p-4 shadow-sm hover:shadow-lg transition-shadow flex flex-col" style="width: 320px; height: 450px;">
+                            <img src="https://picsum.photos/400/700" alt="Nome da Websérie" class="w-full h-48 object-cover organic-img mb-4">
+                            <div class="flex-grow">
+                                <h4 class="text-xl font-bold uppercase">Conexões Não Táteis</h4>
+                                <p class="font-roboto text-gray-600 text-sm mb-2">De Will Miller e Cine Barranco, 2021 | Websérie</p>
+                                <p class="font-roboto text-dark"><strong>Gênero:</strong> Drama contemporâneo</p>
+                                <p class="font-roboto text-dark"><strong>Personagem:</strong> Luan (protagonista)</p>
+                            </div>
+                            
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4 mt-12">Direção</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
                 <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg flex flex-col md:flex-row gap-4 items-center">
-                    <img src="URL_IMAGEM_INTERIM" alt="Interim" class="w-full md:w-40 h-40 object-cover organic-img">
+                    <img src="https://picsum.photos/400/700" alt="Interim" class="w-full md:w-40 h-40 object-cover organic-img">
                     <div>
                         <h4 class="text-xl font-bold uppercase">Interim</h4>
                         <p class="font-roboto text-gray-600 text-sm mb-1">De Ray Ariana, 2024 | Cena Curta</p>
@@ -206,6 +248,17 @@
                         <p class="font-roboto text-primary font-semibold mt-2">Direção de Elenco: Will Miller</p>
                     </div>
                 </article>
+
+                <article class="bg-light organic-card p-4 shadow-sm hover:shadow-lg flex flex-col md:flex-row gap-4 items-center">
+                    <img src="https://picsum.photos/400/700" alt="Bella Como Las Fresias" class="w-full md:w-40 h-40 object-cover organic-img">
+                    <div>
+                        <h4 class="text-xl font-bold uppercase">Bella Como Las Fresias</h4>
+                        <p class="font-roboto text-gray-600 text-sm mb-1">De Uriel Agramont, 2025 | Curta-metragem</p>
+                        <p class="font-roboto text-dark"><strong>Gênero:</strong> Drama Contemporâneo</p>
+                        <p class="font-roboto text-primary font-semibold mt-2">Direção de Elenco: Will Miller</p>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -213,7 +266,7 @@
     <section id="literatura" class="section-padding bg-[#E07A5F]/10 relative">
         <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center gap-12">
             <div class="w-full md:w-1/2">
-                <img src="URL_FOTO_LIVRO_TERRA_FUNDA" alt="Livro Terra Funda" class="w-full organic-shape shadow-xl">
+                <img src="https://picsum.photos/400/700" alt="Livro Terra Funda" class="w-full organic-shape shadow-xl">
             </div>
             <div class="w-full md:w-1/2">
                 <h2 class="text-4xl font-bold uppercase text-dark mb-2">Terra Funda</h2>
@@ -286,14 +339,22 @@
             </div>
 
             <h3 class="text-2xl font-bold uppercase mb-8 text-primary">Galeria</h3>
-            <div class="columns-2 md:columns-3 gap-4 space-y-4">
-                <img src="https://picsum.photos/400/600" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://picsum.photos/400/400" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://picsum.photos/400/500" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://picsum.photos/400/700" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+            <div class="columns-2 md:columns-3 gap-4 space-y-4 pb-12">
+                <img src="assets/url-img-perfil-3.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-6.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-2.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-5.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-4.png" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
+                <img src="assets/url-img-perfil-1.jpg" class="w-full organic-img opacity-80 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </section>
+
+    <footer class="bg-dark text-gray-400 py-6 text-center text-sm font-roboto border-t border-white/10 relative z-10">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2026 Will Miller. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script>
         // Menu Mobile Toggle
@@ -304,14 +365,25 @@
             menu.classList.toggle('hidden');
         });
 
-        // Fechar menu mobile ao clicar em um link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
             });
         });
+    </script> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.atuacaoSwiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 32,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
     </script>
 </body>
-
 </html>
-
