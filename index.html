@@ -87,7 +87,7 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl font-bold text-dark tracking-wider hover:text-primary transition-colors uppercase">Will Miller</a>
             
-            <ul class="hidden md:flex space-x-6 text-sm font-semibold uppercase tracking-wide">
+            <ul class="hidden lg:flex space-x-6 text-sm font-semibold uppercase tracking-wide">
                 <li><a href="#home" class="text-dark hover:text-primary transition-colors">Home</a></li>
                 <li><a href="#sobre" class="text-dark hover:text-primary transition-colors">Sobre</a></li>
                 <li><a href="#palco-tela" class="text-dark hover:text-primary transition-colors">Palco e Tela</a></li>
@@ -97,12 +97,12 @@
                 <li><a href="#contato" class="text-dark hover:text-primary transition-colors">Contato e Galeria</a></li>
             </ul>
 
-            <button id="mobile-menu-btn" class="md:hidden text-dark hover:text-primary transition-colors duration-300 text-2xl focus:outline-none">
+            <button id="mobile-menu-btn" class="lg:hidden text-dark hover:text-primary transition-all duration-300 transform text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
 
-        <div id="mobile-menu" class="md:hidden bg-light border-gray-200 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+        <div id="mobile-menu" class="lg:hidden bg-light border-gray-200 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
             <ul class="flex flex-col space-y-4 px-6 py-4 font-semibold uppercase text-sm">
                 <li><a href="#home" class="block text-dark hover:text-primary transition-colors">Home</a></li>
                 <li><a href="#sobre" class="block text-dark hover:text-primary transition-colors">Sobre</a></li>
@@ -149,10 +149,10 @@
             <div class="w-full md:w-1/2 flex justify-center">
                 <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl cursor-pointer swiper profileSwiper group transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaPerfil()">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <div class="swiper-slide overflow-hidden bg-dark">
                             <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 md:scale-[1.8] md:translate-y-10 md:-translate-x-12">
                         </div>
-                        <div class="swiper-slide">
+                        <div class="swiper-slide overflow-hidden bg-dark">
                             <img src="assets/url-img-perfil-3.png" alt="Will Miller" class="w-full h-full object-cover scale-[1.2] translate-y-1 translate-x-0 md:scale-[1.1] md:-translate-y-6 md:-translate-x-1">
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                 <div>
                     <div class="mb-4">
                         <h3 class="text-2xl font-semibold text-primary uppercase leading-tight">O Artista</h3>
-                        <a href="URL_DA_SUA_PAGINA_AQUI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
+                        <a href="trajetoria.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
                             Conheça a trajetória completa <i class="fas fa-arrow-right text-[9px] group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
@@ -501,24 +501,62 @@
     
     <script>
         // ==========================================
-        // MENU MOBILE (Com deslizamento suave)
+        // MENU MOBILE (Deslizamento, fechamento no scroll, animação e clique fora)
         // ==========================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         
+        // Função centralizada para fechar o menu e resetar o botão
+        function fecharMenuMobile() {
+            // Verifica se o menu está aberto antes de tentar fechar
+            if (menu.classList.contains('max-h-[500px]')) {
+                // Esconde o menu
+                menu.classList.add('max-h-0', 'opacity-0');
+                menu.classList.remove('max-h-[500px]', 'opacity-100', 'border-b');
+                
+                // Volta o botão para a cor original (escuro) e tira o verde
+                btn.classList.add('text-dark');
+                btn.classList.remove('text-primary');
+            }
+        }
+
+        // Ação ao clicar no botão de 3 barras
         btn.addEventListener('click', () => {
+            // 1. Efeito de "pulo" suave (escala de 10%)
+            btn.classList.add('scale-110');
+            setTimeout(() => {
+                btn.classList.remove('scale-110');
+            }, 200);
+
+            // 2. Alterna o menu (abre/fecha visualmente)
             menu.classList.toggle('max-h-0');
             menu.classList.toggle('opacity-0');
             menu.classList.toggle('max-h-[500px]');
             menu.classList.toggle('opacity-100');
             menu.classList.toggle('border-b');
+
+            // 3. Alterna a cor do botão (Verde se abrir, Escuro se fechar)
+            btn.classList.toggle('text-dark');
+            btn.classList.toggle('text-primary');
         });
 
+        // Fecha ao clicar em um link do menu
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('max-h-0', 'opacity-0');
-                menu.classList.remove('max-h-[500px]', 'opacity-100', 'border-b');
-            });
+            link.addEventListener('click', fecharMenuMobile);
+        });
+
+        // Fecha automaticamente se o usuário tocar e rolar a tela
+        window.addEventListener('scroll', fecharMenuMobile, { passive: true });
+
+        // NOVIDADE: Fecha automaticamente se o usuário clicar fora do menu
+        document.addEventListener('click', (event) => {
+            const clicouNoBotao = btn.contains(event.target);
+            const clicouNoMenu = menu.contains(event.target);
+            
+            // Se o menu está aberto e o clique NÃO foi no botão nem nos links, ele fecha
+            if (menu.classList.contains('max-h-[500px]') && !clicouNoBotao && !clicouNoMenu) {
+                fecharMenuMobile();
+            }
         });
 
         // ==========================================
