@@ -83,6 +83,16 @@
 
 <body class="font-montserrat relative overflow-x-hidden">
 
+    <div id="aviso-construcao" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md bg-dark/90 backdrop-blur-md organic-card border border-primary/30 shadow-2xl px-6 py-4 flex items-center justify-between gap-4 transition-all duration-500">
+        <div class="flex items-center gap-3 text-sm">
+            <i class="fas fa-hard-hat text-primary text-lg"></i>
+            <span class="text-white font-medium font-roboto">Site em construção. Alguns visuais e links ainda estão sendo atualizados.</span>
+        </div>
+        <button onclick="document.getElementById('aviso-construcao').remove()" class="group transition-all duration-300 transform hover:scale-110 active:scale-95 flex-shrink-0 focus:outline-none" aria-label="Fechar aviso">
+            <i class="fas fa-times text-lg text-gray-400 group-hover:text-primary group-active:text-primary transition-colors"></i>
+        </button>
+    </div>
+
     <header class="fixed w-full top-0 z-50 bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border-b border-gray-200/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl font-bold text-dark tracking-wider hover:text-primary transition-colors uppercase">Will Miller</a>
@@ -149,10 +159,10 @@
             <div class="w-full md:w-1/2 flex justify-center">
                 <div class="relative w-64 h-96 md:w-80 md:h-[32rem] overflow-hidden organic-img border-4 border-primary/20 shadow-2xl cursor-pointer swiper profileSwiper group transition-all duration-300 hover:brightness-110 hover:shadow-2xl" onclick="abrirGaleriaPerfil()">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide overflow-hidden bg-dark">
+                        <div class="swiper-slide relative w-full h-full isolate overflow-hidden bg-dark">
                             <img src="assets/url-img-perfil-2.jpg" alt="Will Miller" class="w-full h-full object-cover scale-[1.8] translate-y-10 -translate-x-12 md:scale-[1.8] md:translate-y-10 md:-translate-x-12">
                         </div>
-                        <div class="swiper-slide overflow-hidden bg-dark">
+                        <div class="swiper-slide relative w-full h-full isolate overflow-hidden bg-dark">
                             <img src="assets/url-img-perfil-3.png" alt="Will Miller" class="w-full h-full object-cover scale-[1.2] translate-y-1 translate-x-0 md:scale-[1.1] md:-translate-y-6 md:-translate-x-1">
                         </div>
                     </div>
@@ -168,69 +178,84 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-4xl font-bold uppercase text-dark mb-12 text-center">Sobre Mim</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
                     <div class="mb-4">
                         <h3 class="text-2xl font-semibold text-primary uppercase leading-tight">O Artista</h3>
-                        <a href="trajetoria.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
+                        <a href="trajetoria.html" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
                             Conheça a trajetória completa <i class="fas fa-arrow-right text-[9px] group-hover:translate-x-1 transition-transform"></i>
                         </a>
                     </div>
                     
                     <p class="font-roboto text-dark leading-relaxed mb-6 text-justify">
-                        Graduando em Teatro (UFMG), com intercâmbio em Artes Audiovisuais (UNLP/Argentina). Ator de teatro e cinema, pesquisador e arte-educador, atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais, além de forte interesse pela escrita literária. Possuo experiência editorial com Adobe InDesign e edição de video/motion (Adobe Premiere, After Effects e CapCut).
+                        Seja bem-vinda(o) à minha página. Sou Will Miller, ator de teatro e cinema, pesquisador, arte-educador e escritor. Atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais. Sou graduando em Teatro (UFMG), com intercâmbio em Artes Audiovisuais (UNLP/Argentina). Possuo experiência em edição de vídeo, motion e VFX (Adobe Premiere, After Effects).
                     </p>
                     <p class="font-roboto text-dark"><strong>Idade:</strong> 24 anos | <strong>Altura:</strong> 1,74m</p>
                 </div>
 
-                <div class="space-y-10">
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-xl font-semibold text-primary uppercase leading-tight">Formação acadêmica</h3>
-                            <a href="https://lattes.cnpq.br/6146741416005526" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
-                                Acesse o currículo Lattes <i class="fas fa-external-link-alt text-[9px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
-                            </a>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-sm">Graduação em Teatro (2020-2026)</h4>
-                                <p class="text-sm text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
-                                <p class="text-sm text-gray-600">Universidad Nacional de La Plata - Argentina</p>
-                            </div>
-                        </div>
+                <div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-primary uppercase leading-tight">Formação acadêmica</h3>
+                        <a href="https://lattes.cnpq.br/6146741416005526" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mt-1 group">
+                            Acesse o currículo Lattes <i class="fas fa-external-link-alt text-[9px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
+                        </a>
                     </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Idiomas</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Português (Nativo)</span>
-                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Espanhol (Fluente)</span>
-                            <span class="bg-primary/10 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Inglês (Básico)</span>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-sm">Graduação em Teatro (2020-2026)</h4>
+                            <p class="text-sm text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
                         </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4 text-primary uppercase">Competências</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Escrita Criativa</span>
-                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Edição & Motion</span>
-                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Violão</span>
-                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Xequerê</span>
-                            <span class="bg-gray-100 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Patins</span>
+                        <div>
+                            <h4 class="font-bold text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
+                            <p class="text-sm text-gray-600">Universidad Nacional de La Plata - Argentina</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div>
+                <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Competências</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary uppercase mb-4">Habilidades</h3>
+                        <ul class="font-roboto text-dark space-y-2 text-sm">
+                            <li>• Edição e montagem de vídeo (VFX)</li>
+                            <li>• Adobe Premiere, After Effects, CapCut</li>
+                            <li>• Adobe InDesign</li>
+                            <li>• Escrita Criativa</li>
+                            <li>• Planejamento e Responsabilidade</li>
+                            <li>• Proatividade e Inovação</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary uppercase mb-4">Idiomas</h3>
+                        <div class="flex flex-col gap-2 font-roboto text-sm text-dark">
+                            <span class="bg-primary/10 px-3 py-2 rounded-lg border border-primary/20"><strong>Português:</strong> Nativo</span>
+                            <span class="bg-primary/10 px-3 py-2 rounded-lg border border-primary/20"><strong>Espanhol:</strong> Fluente</span>
+                            <span class="bg-primary/10 px-3 py-2 rounded-lg border border-primary/20"><strong>Inglês:</strong> Básico</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary uppercase mb-4">Hobbies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Violão</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Xequerê</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Patins</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Fotografia B&W</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="palco-tela" class="section-padding bg-white relative">
-        <div class="container mx-auto px-6 max-w-6xl">
+        <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-4xl font-bold uppercase text-dark mb-16 text-center">Palco e Tela</h2>
             
             <h3 class="text-2xl font-bold mb-8 text-primary uppercase border-l-4 border-primary pl-4">Atuação</h3>
@@ -312,7 +337,7 @@
     <section id="literatura" class="section-padding bg-[#E07A5F]/10 relative">
         <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row items-center md:items-start gap-12">
             
-            <div class="w-full md:w-1/2 flex justify-center">
+            <div class="w-full md:w-80 shrink-0 flex justify-center md:justify-start">
                 <div class="relative w-64 h-[26rem] md:w-80 md:h-[32rem] overflow-hidden livro-shape shadow-xl cursor-pointer transition-all duration-300 hover:brightness-110 hover:shadow-2xl group" onclick="abrirGaleriaLivro()">
                     <img src="assets/url-img-livro-tf-1.jpg" alt="Livro Terra Funda" class="w-full h-full object-cover relative scale-[1.3] -translate-x-0 translate-y-1">
                     <div class="absolute bottom-8 left-[58%] -translate-x-1/2 bg-dark/70 text-white text-[10px] px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
@@ -321,13 +346,36 @@
                 </div>
             </div>
             
-            <div class="w-full md:w-1/2">
-                <h2 class="text-4xl font-bold uppercase text-dark mb-2">Terra Funda</h2>
+            <div class="w-full flex-1 md:max-w-[500px] md:ml-auto">
+                <h2 class="text-4xl font-bold uppercase text-dark mb-2">Livro <span class="italic">Terra Funda</span></h2>
                 
-                <p class="text-lg font-bold mb-6">
-                    <span class="text-[#E07A5F]">Lançamento 2025</span> 
-                    <span class="text-dark"> • Ed. Pá de Mundo</span>
-                </p>
+                <div onclick="toggleFichaTecnica()" class="inline-flex items-center cursor-pointer group mb-6 select-none">
+                    <p class="text-lg font-bold">
+                        <span class="text-[#E07A5F] group-hover:brightness-110 transition-all">Autor: Will Miller</span> 
+                        <span class="text-dark"> • Ed. Pá de Mundo</span>
+                    </p>
+                    <i id="seta-ficha" class="fas fa-chevron-down text-[#E07A5F] ml-3 text-[15px] transition-transform duration-300 group-hover:translate-y-0.5"></i>
+                </div>
+
+                <div id="ficha-tecnica" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Dramaturgia</span>
+                        <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Ficção contemporânea</span>
+                        <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Teatro Brasileiro</span>
+                    </div>
+                    
+                    <div class="font-montserrat font-light text-sm text-dark space-y-1 mb-6">
+                        <p><strong>Páginas:</strong> 60</p>
+                        <p><strong>Dimensões:</strong> 14 x 21cm</p>
+                        <p><strong>ISBN:</strong> 978-65-01-47874-6</p>
+                        <p><strong>Classificação indicativa:</strong> 12+</p>
+                        <p><strong>Ilustrações:</strong> Rafa Maart</p>
+                        <p><strong>Lançamento:</strong> 25 de julho de 2025</p>
+                        <p><strong>Produção e Impressão:</strong> Astra Gab. Filpi e Editora Pá de Mundo</p>
+                    </div>
+                    
+                    <hr class="border-t-2 border-primary/30 mb-6">
+                </div>
                 
                 <p class="font-roboto text-dark leading-relaxed mb-8 text-lg text-justify">
                     "Um mergulho no solo vivo da memória, onde afetos, brincadeiras e resistências de um povo negro se entrelaçam como raízes. Em ato único, dois atuantes dão corpo a quatro personagens em uma narrativa costurada por oralidade, ecologia e ancestralidade. Terra Funda entrelaça lembranças pessoais e coletivas num teatro de denúncia e afeto, que confronta o apagamento das memórias e a devastação ambiental do território. Aqui, cada gesto é semente, cada palavra é terra."
@@ -493,7 +541,7 @@
         </div>
     </div>
 
-    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-3 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
+    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
         <i class="fas fa-chevron-up text-dark group-hover:text-primary transition-colors text-lg"></i>
     </button>
 
@@ -704,29 +752,60 @@
         }
 
         // ==========================================
-        // BOTÃO VOLTAR AO TOPO (Com sumiço automático)
+        // FICHA TÉCNICA DO LIVRO (Animação de abrir/fechar)
+        // ==========================================
+        function toggleFichaTecnica() {
+            const ficha = document.getElementById('ficha-tecnica');
+            const seta = document.getElementById('seta-ficha');
+            
+            if (ficha.classList.contains('max-h-0')) {
+                // Abre a ficha
+                ficha.classList.remove('max-h-0', 'opacity-0');
+                ficha.classList.add('max-h-[500px]', 'opacity-100');
+                seta.classList.add('rotate-180'); // Vira a seta para cima
+            } else {
+                // Fecha a ficha
+                ficha.classList.add('max-h-0', 'opacity-0');
+                ficha.classList.remove('max-h-[500px]', 'opacity-100');
+                seta.classList.remove('rotate-180'); // Volta a seta para baixo
+            }
+        }
+
+        // ==========================================
+        // BOTÃO VOLTAR AO TOPO (Com sumiço automático e trava no footer)
         // ==========================================
         const btnBackToTop = document.getElementById('btn-back-to-top');
         const sectionSobre = document.getElementById('sobre');
-        let isScrolling; // Variável para guardar o timer
+        const footer = document.querySelector('footer');
+        let isScrolling;
 
         window.addEventListener('scroll', () => {
-            // 1. Limpa o temporizador antigo toda vez que você rolar a tela
             window.clearTimeout(isScrolling);
 
-            // 2. Lógica para APARECER: Só aparece se passou da seção "Sobre Mim"
+            // 1. Lógica para travar o botão acima do footer
+            let scrollPosition = window.scrollY + window.innerHeight;
+            let footerTop = footer.offsetTop;
+
+            if (scrollPosition >= footerTop) {
+                let diferenca = scrollPosition - footerTop;
+                // 32px é o valor exato do bottom-8. Somamos a diferença para empurrar para cima.
+                btnBackToTop.style.bottom = (32 + diferenca) + "px"; 
+            } else {
+                btnBackToTop.style.bottom = "32px"; // Volta para a distância padrão
+            }
+
+            // 2. Lógica para APARECER apenas depois da seção "Sobre Mim"
             if (window.scrollY >= (sectionSobre.offsetTop - 200)) {
                 btnBackToTop.classList.remove('opacity-0', 'pointer-events-none');
                 btnBackToTop.classList.add('opacity-100', 'pointer-events-auto');
 
-                // 3. Temporizador: Define para SUMIR após 2 segundos (2000ms) sem rolagem
+                // 3. Temporizador para SUMIR
                 isScrolling = setTimeout(() => {
                     btnBackToTop.classList.add('opacity-0', 'pointer-events-none');
                     btnBackToTop.classList.remove('opacity-100', 'pointer-events-auto');
                 }, 1500); 
 
             } else {
-                // Se voltar para a Home, garante que o botão suma imediatamente
                 btnBackToTop.classList.add('opacity-0', 'pointer-events-none');
                 btnBackToTop.classList.remove('opacity-100', 'pointer-events-auto');
             }
