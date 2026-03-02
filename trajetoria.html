@@ -41,6 +41,16 @@
 
 <body class="font-montserrat relative overflow-x-hidden">
 
+    <div id="aviso-construcao" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-md bg-dark/90 backdrop-blur-md organic-card border border-primary/30 shadow-2xl px-6 py-4 flex items-center justify-between gap-4 transition-all duration-500">
+        <div class="flex items-center gap-3 text-sm">
+            <i class="fas fa-hard-hat text-primary text-lg"></i>
+            <span class="text-white font-medium font-roboto">Site em construção. Alguns visuais e links ainda estão sendo atualizados.</span>
+        </div>
+        <button onclick="document.getElementById('aviso-construcao').remove()" class="group transition-all duration-300 transform hover:scale-110 active:scale-95 flex-shrink-0 focus:outline-none" aria-label="Fechar aviso">
+            <i class="fas fa-times text-lg text-gray-400 group-hover:text-primary group-active:text-primary transition-colors"></i>
+        </button>
+    </div>
+
     <header class="fixed w-full top-0 z-50 bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border-b border-gray-200/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html#home" class="text-xl font-bold text-dark tracking-wider hover:text-primary transition-colors uppercase">Will Miller</a>
@@ -73,72 +83,94 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-12 bg-dark text-center">
+    <section class="pt-32 pb-28 bg-dark text-center">
         <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-bold uppercase text-white mb-4">Trajetória Completa</h1>
-            <p class="text-primary text-lg font-roboto">Wily Leite Silva (Will Miller)</p>
-            <a href="index.html#sobre" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-white/60 hover:text-primary transition-colors mt-6 group">
-                <i class="fas fa-arrow-left text-[9px] group-hover:-translate-x-1 transition-transform"></i> Voltar para o resumo
-            </a>
+            <h1 class="text-4xl md:text-5xl font-bold uppercase text-white">Trajetória</h1>
         </div>
     </section>
 
     <section class="section-padding bg-light">
+        <div class="container mx-auto px-6 max-w-5xl flex justify-end">
+             <a href="index.html#sobre" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mb-4 group">
+                <i class="fas fa-arrow-left text-[9px] group-hover:-translate-x-1 transition-transform"></i> Voltar para o resumo
+            </a>
+        </div>
+
         <div class="container mx-auto px-6 max-w-5xl">
-            
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Formação</h2>
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
                 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary uppercase mb-6">Acadêmica</h3>
-                        <div class="space-y-4">
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark">Graduação em Teatro (2020-2026)</h4>
-                                <p class="text-sm font-roboto text-gray-600">Universidade Federal de Minas Gerais (UFMG)</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark">Intercâmbio em Artes Audiovisuais (2025)</h4>
-                                <p class="text-sm font-roboto text-gray-600">Universidad Nacional de La Plata - Argentina</p>
+                <div>
+                    <h2 class="text-3xl font-bold uppercase text-primary mb-1 text-right">Will Miller</h2>
+                    <p class="text-sm italic text-gray-600 mb-8 text-right">"O teatro é o espaço da consciência." – Abdias do Nascimento</p>
+                    
+                    <div class="pt-[220px]">
+                        <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Formação</h2>
+                        
+                        <div class="mb-10">
+                            <h3 class="text-xl font-semibold text-primary uppercase mb-6">Acadêmica</h3>
+                            <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
+                                <ul class="flex flex-col gap-5">
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Graduação em Teatro (2020-2026)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Universidade Federal de Minas Gerais (UFMG)</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Universidad Nacional de La Plata - Argentina</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary uppercase mb-6">Complementar</h3>
-                        <div class="space-y-4">
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Oficina de Dramaturgia</h4>
-                                <p class="text-xs font-roboto text-gray-500">Grupo Nós Três de Teatro, 2025</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Viver de Atuação (2.0) - Técnica Chubbuck</h4>
-                                <p class="text-xs font-roboto text-gray-500">Treinamento em atuação, 2024</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Teatro do Oprimido como Pedagogia em Museus</h4>
-                                <p class="text-xs font-roboto text-gray-500">Fundação Municipal de Cultura, 2024</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Seminário de Produção Cultural Preta de MG</h4>
-                                <p class="text-xs font-roboto text-gray-500">Instituto Aya de Arte e Cultura Negra, 2023</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Formação de Educadores (Muquifu)</h4>
-                                <p class="text-xs font-roboto text-gray-500">Setor Educativo do MHNJB, 2023</p>
-                            </div>
-                            <div class="bg-white p-5 organic-card shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-dark text-sm">Seminários de Produção Cultural (Itajaí)</h4>
-                                <p class="text-xs font-roboto text-gray-500">Lei Federal de Incentivo à Cultura (2021) e ESG (2022)</p>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary uppercase mb-6">Complementar</h3>
+                            <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
+                                <ul class="flex flex-col gap-5">
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Oficina de Dramaturgia</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Grupo Nós Três de Teatro, 2025</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Viver de Atuação (2.0) - Técnica Chubbuck</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Treinamento em atuação, 2024</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Teatro do Oprimido como Pedagogia em Museus</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Fundação Municipal de Cultura, 2024</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Seminário de Produção Cultural Preta de MG</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Instituto Aya de Arte e Cultura Negra, 2023</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Formação de Educadores (Muquifu)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Setor Educativo do MHNJB, 2023</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Seminários de Produção Cultural (Itajaí)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Lei Federal de Incentivo à Cultura (2021) e ESG (2022)</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div> 
+                    <div class="space-y-4 font-roboto text-dark leading-relaxed text-justify md:text-[15px]">
+                        <p>Nasci em 2002 e me reencontrei com a arte no Grupo de Teatro Fênix, em Januária (MG), onde descobri, na cena, uma potência para a expressão da minha voz e um espaço para fabular novos mundos possíveis, e pude viver diversos personagens em espetáculos locais. Digo reencontro, pois toda criança, desde que nasce, é artista, faz arte. E, aos poucos, vai deixando de ser artista. Mas lindo é o reencontro.</p>
+                        <p>Atualmente, sou graduando em Teatro pela Escola de Belas Artes da UFMG, em Belo Horizonte, com intercâmbio em Artes Audiovisuais pela Universidad Nacional de La Plata (UNLP), na Argentina.</p>
+                        <p>Atuo como ator de teatro e cinema, pesquisador, arte-educador e escritor. Atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais.</p>
+                        <p>No teatro, atuei nos espetáculos <em>Quem Roubou o Branco do Mundo</em> (2019), <em>Quem Fala de Nós Tem Paixão</em> (2019) e <em>Esta Noite Mãe Coragem</em> (2023). No audiovisual, atuei como protagonista nos curtas <em>Aña Guasu</em> (2025), <em>7AM</em> (2025) e na websérie <em>Conexões Não Táteis</em> (2021), da qual também fui criador, roteirista e produtor (Lei Aldir Blanc). Trabalhei ainda como diretor de elenco em <em>Bella como las Fresias</em> (2025) e na cena curta <em>Ínterim</em> (2024), além de assistente de produção no curta <em>Ori Ojurere Mi</em> (FMC/BH).</p>
+                        <p>Já na literatura, sou autor e produtor do livro dramatúrgico <em>Terra Funda</em> (Lei Paulo Gustavo, 2025), obra que reafirma meu compromisso com memória, território e coletividade.</p>
+                        <p>Sou geraizeiro, filho de Roseane e Renato, e, desde cedo, eu, Wily Leite Silva, de nome artístico Will Miller, entendi que ser mais um “Silva”, na verdade, é carregar força e coragem no sangue para lutar pelos próprios sonhos e desfrutar a vida em coletivo. Assim, almejo novos ares para compor esta jovem trajetória.</p>
+                    </div>
+                </div>
+                
             </div>
 
             <div class="mb-16">
                 <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Experiência Profissional</h2>
-                
                 <div class="space-y-6">
                     <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
@@ -148,7 +180,6 @@
                         <p class="font-semibold text-sm mb-2 text-gray-700">Arte-educador e mediador cultural (Estágio)</p>
                         <p class="font-roboto text-gray-600 text-sm">Atuação na comunicação entre obras e público visitante; criação de narrativas e roteiros para visitas guiadas, mediação para público diverso.</p>
                     </div>
-
                     <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                             <h3 class="text-lg font-bold uppercase text-dark">Museu de História Natural (MHNJB/UFMG)</h3>
@@ -157,7 +188,6 @@
                         <p class="font-semibold text-sm mb-2 text-gray-700">Arte-educador e mediador museal (Estágio/Extensão)</p>
                         <p class="font-roboto text-gray-600 text-sm">Mediação, idealização e roteirização da série autoral "Contos e Ecologias"; criação de conteúdos narrativos para divulgação científica.</p>
                     </div>
-
                     <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
                         <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                             <h3 class="text-lg font-bold uppercase text-dark">Produção Cultural e Leis de Incentivo</h3>
@@ -169,7 +199,6 @@
 
             <div>
                 <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Competências</h2>
-                
                 <div class="grid md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-xl font-semibold text-primary uppercase mb-4">Habilidades</h3>
@@ -182,7 +211,6 @@
                             <li>• Proatividade e Inovação</li>
                         </ul>
                     </div>
-                    
                     <div>
                         <h3 class="text-xl font-semibold text-primary uppercase mb-4">Idiomas</h3>
                         <div class="flex flex-col gap-2 font-roboto text-sm text-dark">
@@ -191,19 +219,17 @@
                             <span class="bg-primary/10 px-3 py-2 rounded-lg border border-primary/20"><strong>Inglês:</strong> Básico</span>
                         </div>
                     </div>
-
                     <div>
-                        <h3 class="text-xl font-semibold text-primary uppercase mb-4">Arte & Hobbies</h3>
+                        <h3 class="text-xl font-semibold text-primary uppercase mb-4">Hobbies</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-200 text-dark px-3 py-1 rounded-full text-xs font-medium">Violão</span>
-                            <span class="bg-gray-200 text-dark px-3 py-1 rounded-full text-xs font-medium">Xequerê</span>
-                            <span class="bg-gray-200 text-dark px-3 py-1 rounded-full text-xs font-medium">Patins</span>
-                            <span class="bg-gray-200 text-dark px-3 py-1 rounded-full text-xs font-medium">Fotografia B&W</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Violão</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Xequerê</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Patins</span>
+                            <span class="bg-primary/10 border-2 border-primary/30 text-dark px-3 py-1 rounded-full text-xs font-medium hover:shadow-md transition-shadow cursor-default">Fotografia B&W</span>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -213,69 +239,64 @@
         </div>
     </footer>
 
-    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-3 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
+    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
         <i class="fas fa-chevron-up text-dark group-hover:text-primary transition-colors text-lg"></i>
     </button>
 
     <script>
-        // ==========================================
-        // MENU MOBILE (Com deslizamento, fechamento no scroll e clique fora)
-        // ==========================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
-        
         function fecharMenuMobile() {
             if (menu.classList.contains('max-h-[500px]')) {
                 menu.classList.add('max-h-0', 'opacity-0');
                 menu.classList.remove('max-h-[500px]', 'opacity-100', 'border-b');
-                
                 btn.classList.add('text-dark');
                 btn.classList.remove('text-primary');
             }
         }
-
         btn.addEventListener('click', () => {
             btn.classList.add('scale-110');
             setTimeout(() => { btn.classList.remove('scale-110'); }, 200);
-
             menu.classList.toggle('max-h-0');
             menu.classList.toggle('opacity-0');
             menu.classList.toggle('max-h-[500px]');
             menu.classList.toggle('opacity-100');
             menu.classList.toggle('border-b');
-
             btn.classList.toggle('text-dark');
             btn.classList.toggle('text-primary');
         });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', fecharMenuMobile);
-        });
-
+        document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', fecharMenuMobile); });
         window.addEventListener('scroll', fecharMenuMobile, { passive: true });
-
         document.addEventListener('click', (event) => {
             const clicouNoBotao = btn.contains(event.target);
             const clicouNoMenu = menu.contains(event.target);
-            
-            if (menu.classList.contains('max-h-[500px]') && !clicouNoBotao && !clicouNoMenu) {
-                fecharMenuMobile();
-            }
+            if (menu.classList.contains('max-h-[500px]') && !clicouNoBotao && !clicouNoMenu) { fecharMenuMobile(); }
         });
-
-        // ==========================================
-        // BOTÃO VOLTAR AO TOPO
-        // ==========================================
         const btnBackToTop = document.getElementById('btn-back-to-top');
-        let isScrolling; 
+        const footer = document.querySelector('footer');
+        let isScrolling;
 
         window.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
 
-            if (window.scrollY >= 200) {
+            // 1. Lógica para travar o botão acima do footer
+            let scrollPosition = window.scrollY + window.innerHeight;
+            let footerTop = footer.offsetTop;
+
+            if (scrollPosition >= footerTop) {
+                let diferenca = scrollPosition - footerTop;
+                // 32px é a distância padrão (bottom-8). Ajustamos conforme o scroll chega no footer
+                btnBackToTop.style.bottom = (32 + diferenca) + "px"; 
+            } else {
+                btnBackToTop.style.bottom = "32px"; 
+            }
+
+            // 2. Lógica para aparecer/sumir no scroll
+            if (window.scrollY >= 400) {
                 btnBackToTop.classList.remove('opacity-0', 'pointer-events-none');
                 btnBackToTop.classList.add('opacity-100', 'pointer-events-auto');
 
+                // Sumir automaticamente após 1.5s parado
                 isScrolling = setTimeout(() => {
                     btnBackToTop.classList.add('opacity-0', 'pointer-events-none');
                     btnBackToTop.classList.remove('opacity-100', 'pointer-events-auto');
