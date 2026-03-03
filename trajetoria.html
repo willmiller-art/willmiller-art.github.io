@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon-redondo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +37,41 @@
         body { background-color: #F5F9FF; color: #252426; }
         .section-padding { padding-top: 6rem; padding-bottom: 6rem; }
         .organic-card { border-radius: 12px 32px 16px 24px; }
+        .organic-img { border-radius: 16px 24px 8px 32px; }
+
+        /* Efeito de Borda/Moldura para Imagem com o Hover */
+        .hover-moldura-verde {
+            border: 4px solid #252426; 
+            transition: border-color 0.3s ease, filter 0.3s ease;
+        }
+        .hover-moldura-verde:hover {
+            border-color: #81af91;
+        }
+
+        /* Estilo para a Paginação Branca no Swiper do Modal */
+        .swiper-pagination-bullet { background: white !important; opacity: 0.7 !important; }
+        .swiper-pagination-bullet-active { background: #81af91 !important; opacity: 1 !important; }
+
+        /* Setas do modal expandido */
+        .swiper-nav-expandido {
+            color: white !important;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            margin-top: 0 !important;
+            z-index: 100 !important;
+        }
+        .swiper-nav-expandido:hover {
+            color: #81af91 !important;
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1) !important;
+        }
+        .swiper-button-prev.swiper-nav-expandido { left: 2rem !important; }
+        @media (min-width: 768px) { .swiper-button-prev.swiper-nav-expandido { left: 3rem !important; } }
+        .swiper-button-next.swiper-nav-expandido { right: 2rem !important; }
+        @media (min-width: 768px) { .swiper-button-next.swiper-nav-expandido { right: 3rem !important; } }
     </style>
 </head>
 
@@ -83,7 +119,7 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-28 bg-dark text-center">
+    <section class="pt-32 pb-12 bg-dark text-center">
         <div class="container mx-auto px-6">
             <h1 class="text-4xl md:text-5xl font-bold uppercase text-white">Trajetória</h1>
         </div>
@@ -91,7 +127,7 @@
 
     <section class="section-padding bg-light">
         <div class="container mx-auto px-6 max-w-5xl flex justify-end">
-             <a href="index.html#sobre" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mb-4 group">
+             <a href="index.html#sobre" class="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-dark/60 hover:text-primary transition-colors mb-8 group">
                 <i class="fas fa-arrow-left text-[9px] group-hover:-translate-x-1 transition-transform"></i> Voltar para o resumo
             </a>
         </div>
@@ -99,11 +135,17 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="grid md:grid-cols-2 gap-12 mb-16">
                 
-                <div>
-                    <h2 class="text-3xl font-bold uppercase text-primary mb-1 text-right">Will Miller</h2>
-                    <p class="text-sm italic text-gray-600 mb-8 text-right">"O teatro é o espaço da consciência." – Abdias do Nascimento</p>
+                <div class="flex flex-col gap-10">
                     
-                    <div class="pt-[220px]">
+                    <div class="w-full relative organic-img shadow-md cursor-pointer group transition-all duration-300 hover:brightness-110 hover-moldura-verde overflow-hidden h-56 md:h-72" onclick="abrirGaleriaTrajetoria()">
+                        <img src="assets/url-img-perfil-5.jpg" alt="Will Miller" class="w-full h-full object-cover" style="object-position: center 20%;">
+                        
+                        <button class="absolute top-4 right-4 z-30 bg-white/60 backdrop-blur-md border border-white/20 text-dark text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-dark flex items-center gap-1.5 pointer-events-auto shadow-sm">
+                            <i class="fas fa-search-plus text-[11px]"></i> Ampliar
+                        </button>
+                    </div>
+                    
+                    <div>
                         <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Formação</h2>
                         
                         <div class="mb-10">
@@ -154,16 +196,22 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div> 
                     <div class="space-y-4 font-roboto text-dark leading-relaxed text-justify md:text-[15px]">
-                        <p>Nasci em 2002 e me reencontrei com a arte no Grupo de Teatro Fênix, em Januária (MG), onde descobri, na cena, uma potência para a expressão da minha voz e um espaço para fabular novos mundos possíveis, e pude viver diversos personagens em espetáculos locais. Digo reencontro, pois toda criança, desde que nasce, é artista, faz arte. E, aos poucos, vai deixando de ser artista. Mas lindo é o reencontro.</p>
-                        <p>Atualmente, sou graduando em Teatro pela Escola de Belas Artes da UFMG, em Belo Horizonte, com intercâmbio em Artes Audiovisuais pela Universidad Nacional de La Plata (UNLP), na Argentina.</p>
-                        <p>Atuo como ator de teatro e cinema, pesquisador, arte-educador e escritor. Atuo também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais.</p>
-                        <p>No teatro, atuei nos espetáculos <em>Quem Roubou o Branco do Mundo</em> (2019), <em>Quem Fala de Nós Tem Paixão</em> (2019) e <em>Esta Noite Mãe Coragem</em> (2023). No audiovisual, atuei como protagonista nos curtas <em>Aña Guasu</em> (2025), <em>7AM</em> (2025) e na websérie <em>Conexões Não Táteis</em> (2021), da qual também fui criador, roteirista e produtor (Lei Aldir Blanc). Trabalhei ainda como diretor de elenco em <em>Bella como las Fresias</em> (2025) e na cena curta <em>Ínterim</em> (2024), além de assistente de produção no curta <em>Ori Ojurere Mi</em> (FMC/BH).</p>
-                        <p>Já na literatura, sou autor e produtor do livro dramatúrgico <em>Terra Funda</em> (Lei Paulo Gustavo, 2025), obra que reafirma meu compromisso com memória, território e coletividade.</p>
-                        <p>Sou geraizeiro, filho de Roseane e Renato, e, desde cedo, eu, Wily Leite Silva, de nome artístico Will Miller, entendi que ser mais um “Silva”, na verdade, é carregar força e coragem no sangue para lutar pelos próprios sonhos e desfrutar a vida em coletivo. Assim, almejo novos ares para compor esta jovem trajetória.</p>
+                        <p><span class="text-primary font-bold text-lg">Will Miller</span> nasceu em 2002, em Januária (MG), e se encontrou com a arte através do Grupo de Teatro Fênix, em Januária, onde descobriu, na cena, uma potência para a expressão da própria voz e um espaço para fabular novos mundos possíveis, podendo viver diversos personagens em espetáculos locais. Esse encontro, na verdade, seria um reencontro, pois toda criança, desde que nasce, é artista, faz arte. E, aos poucos, vai deixando de ser artista. Mas lindo é o reencontro.</p>
+                        
+                        <p>Atualmente, é graduando em Teatro pela Escola de Belas Artes da UFMG, em Belo Horizonte, com intercâmbio em Artes Audiovisuais pela Universidad Nacional de La Plata (UNLP), na Argentina.</p>
+                        
+                        <p>Atua como ator de teatro e cinema, pesquisador, arte-educador e escritor. Atua também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais.</p>
+                        
+                        <p>No teatro, atuou nos espetáculos <em>Quem Roubou o Branco do Mundo</em> (2019), <em>Quem Fala de Nós Tem Paixão</em> (2019) e <em>Esta Noite Mãe Coragem</em> (2023). No audiovisual, atuou como protagonista nos curtas <em>Aña Guasu</em> (2025), <em>7AM</em> (2025) e na websérie <em>Conexões Não Táteis</em> (2021), da qual também foi criador, roteirista e produtor (Lei Aldir Blanc). Trabalhou ainda como diretor de elenco em <em>Bella como las Fresias</em> (2025) e na cena curta <em>Ínterim</em> (2024), além de assistente de produção no curta <em>Ori Ojurere Mi</em> (FMC/BH).</p>
+                        
+                        <p>Já na literatura, Will Miller é autor do livro <em>Terra Funda</em> (Lei Paulo Gustavo, 2025), obra dramatúrgica que reafirma seu compromisso com memória, território e coletividade.</p>
+                        
+                        <p>É geraizeiro, filho de Roseane e Renato, e, desde cedo, Wily Leite Silva, de nome artístico Will Miller, entende que ser “mais um Silva”, na verdade, é carregar força e coragem no sangue para lutar pelos próprios sonhos e desfrutar a vida em coletivo. Assim, almeja novos ares para compor sua jovem trajetória.</p>
                     </div>
                 </div>
                 
@@ -205,7 +253,6 @@
                         <ul class="font-roboto text-dark space-y-2 text-sm">
                             <li>• Edição e montagem de vídeo (VFX)</li>
                             <li>• Adobe Premiere, After Effects, CapCut</li>
-                            <li>• Adobe InDesign</li>
                             <li>• Escrita Criativa</li>
                             <li>• Planejamento e Responsabilidade</li>
                             <li>• Proatividade e Inovação</li>
@@ -230,6 +277,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -239,13 +287,36 @@
         </div>
     </footer>
 
-    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-[#F5F9FF]/90 backdrop-blur-md shadow-sm border border-gray-200/50 hover:shadow-md rounded-full">
-        <i class="fas fa-chevron-up text-dark group-hover:text-primary transition-colors text-lg"></i>
+    <div id="modal-galeria-trajetoria" class="fixed inset-0 bg-black/95 z-[1000] hidden items-center justify-center backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="fecharGaleriaTrajetoriaSeForFora(event)">
+        
+        <button onclick="fecharGaleriaTrajetoria()" class="absolute top-6 right-8 w-12 h-12 flex items-center justify-center group z-[1100] bg-white/60 backdrop-blur-md border border-white/20 hover:bg-primary transition-all rounded-full cursor-pointer shadow-sm">
+            <span class="absolute w-5 h-0.5 bg-dark transition-colors rotate-45"></span>
+            <span class="absolute w-5 h-0.5 bg-dark transition-colors -rotate-45"></span>
+        </button>
+        
+        <div class="swiper galeriaTrajetoriaSwiper w-full h-full flex items-center justify-center relative">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center justify-center">
+                    <img src="assets/url-img-perfil-3.png" class="max-h-[90vh] max-w-[90vw] object-contain rounded-sm shadow-2xl">
+                </div>
+            </div>
+            </div>
+    </div>
+
+
+    <button id="btn-back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center group z-40 transition-all duration-500 opacity-0 pointer-events-none bg-white/60 backdrop-blur-md border border-white/20 hover:bg-primary shadow-sm rounded-full">
+        <i class="fas fa-chevron-up text-dark transition-colors text-lg"></i>
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
+        // ==========================================
+        // MENU MOBILE
+        // ==========================================
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
+        
         function fecharMenuMobile() {
             if (menu.classList.contains('max-h-[500px]')) {
                 menu.classList.add('max-h-0', 'opacity-0');
@@ -254,6 +325,7 @@
                 btn.classList.remove('text-primary');
             }
         }
+        
         btn.addEventListener('click', () => {
             btn.classList.add('scale-110');
             setTimeout(() => { btn.classList.remove('scale-110'); }, 200);
@@ -265,13 +337,48 @@
             btn.classList.toggle('text-dark');
             btn.classList.toggle('text-primary');
         });
+        
         document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', fecharMenuMobile); });
         window.addEventListener('scroll', fecharMenuMobile, { passive: true });
+        
         document.addEventListener('click', (event) => {
             const clicouNoBotao = btn.contains(event.target);
             const clicouNoMenu = menu.contains(event.target);
             if (menu.classList.contains('max-h-[500px]') && !clicouNoBotao && !clicouNoMenu) { fecharMenuMobile(); }
         });
+
+        // ==========================================
+        // MODAL DA FOTO DA TRAJETÓRIA
+        // ==========================================
+        let galeriaTrajetoriaInstance = null;
+
+        function abrirGaleriaTrajetoria() {
+            const modal = document.getElementById('modal-galeria-trajetoria');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+
+            if (!galeriaTrajetoriaInstance) {
+                galeriaTrajetoriaInstance = new Swiper('.galeriaTrajetoriaSwiper', {
+                    grabCursor: true, 
+                    centeredSlides: true,
+                });
+            }
+        }
+
+        function fecharGaleriaTrajetoria() {
+            const modal = document.getElementById('modal-galeria-trajetoria');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300);
+        }
+
+        function fecharGaleriaTrajetoriaSeForFora(event) {
+            if (event.target.id === 'modal-galeria-trajetoria') fecharGaleriaTrajetoria();
+        }
+
+        // ==========================================
+        // BOTÃO VOLTAR AO TOPO
+        // ==========================================
         const btnBackToTop = document.getElementById('btn-back-to-top');
         const footer = document.querySelector('footer');
         let isScrolling;
@@ -279,19 +386,18 @@
         window.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
 
-            // 1. Lógica para travar o botão acima do footer
+            // Lógica para travar o botão acima do footer
             let scrollPosition = window.scrollY + window.innerHeight;
             let footerTop = footer.offsetTop;
 
             if (scrollPosition >= footerTop) {
                 let diferenca = scrollPosition - footerTop;
-                // 32px é a distância padrão (bottom-8). Ajustamos conforme o scroll chega no footer
                 btnBackToTop.style.bottom = (32 + diferenca) + "px"; 
             } else {
                 btnBackToTop.style.bottom = "32px"; 
             }
 
-            // 2. Lógica para aparecer/sumir no scroll
+            // Lógica para aparecer/sumir no scroll
             if (window.scrollY >= 400) {
                 btnBackToTop.classList.remove('opacity-0', 'pointer-events-none');
                 btnBackToTop.classList.add('opacity-100', 'pointer-events-auto');
