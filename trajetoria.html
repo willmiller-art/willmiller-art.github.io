@@ -119,10 +119,14 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-12 bg-dark text-center">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-bold uppercase text-white">Trajetória</h1>
+    <section class="relative pt-32 pb-12 text-center bg-cover bg-center bg-no-repeat" style="background-image: url('assets/url-img-capa-tajetoria-1.png');">
+        
+        <div class="absolute inset-0 bg-dark/80"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold uppercase text-white drop-shadow-lg">Trajetória</h1>
         </div>
+        
     </section>
 
     <section class="section-padding bg-light">
@@ -133,84 +137,91 @@
         </div>
 
         <div class="container mx-auto px-6 max-w-5xl">
-            
             <div class="grid md:grid-cols-2 gap-12 mb-16">
                 
-                <div class="w-full relative organic-img shadow-md cursor-pointer group transition-all duration-300 hover:brightness-110 hover-moldura-verde overflow-hidden h-56 md:h-72 order-1 md:col-start-1 md:row-start-1" onclick="abrirGaleriaTrajetoria()">
-                    <img src="assets/url-img-perfil-5.jpg" alt="Will Miller" class="w-full h-full object-cover" style="object-position: center 20%;">
+                <div class="flex flex-col gap-10">
                     
-                    <button class="absolute top-4 right-4 z-30 bg-white/60 backdrop-blur-md border border-white/20 text-dark text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-dark flex items-center gap-1.5 pointer-events-auto shadow-sm">
-                        <i class="fas fa-search-plus text-[11px]"></i> Ampliar
-                    </button>
-                </div>
+                    <div class="w-full relative organic-img shadow-md cursor-pointer group transition-all duration-300 hover:brightness-110 hover-moldura-verde overflow-hidden h-56 md:h-72" onclick="abrirGaleriaTrajetoria()">
+                        <img src="assets/url-img-perfil-5.jpg" alt="Will Miller" class="w-full h-full object-cover" style="object-position: center 20%;">
+                        
+                        <button class="absolute top-4 right-4 z-30 bg-white/60 backdrop-blur-md border border-white/20 text-dark text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-dark flex items-center gap-1.5 pointer-events-auto shadow-sm">
+                            <i class="fas fa-search-plus text-[11px]"></i> Ampliar
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Formação</h2>
+                        
+                        <div class="mb-10">
+                            <h3 class="text-xl font-semibold text-primary uppercase mb-6">Acadêmica</h3>
+                            <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
+                                <ul class="flex flex-col gap-5">
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Graduação em Teatro (2020-2026)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Universidade Federal de Minas Gerais (UFMG)</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Universidad Nacional de La Plata - Argentina</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="space-y-4 font-roboto text-dark leading-relaxed text-justify md:text-[15px] order-2 md:col-start-2 md:row-start-1 md:row-span-2 md:mt-0">
-                    <p><span class="text-primary font-bold text-lg">Will Miller</span> nasceu em 2002, em Januária (MG), e se encontrou com a arte através do Grupo de Teatro Fênix, em Januária, onde descobriu, na cena, uma potência para a expressão da própria voz e um espaço para fabular novos mundos possíveis, podendo viver diversos personagens em espetáculos locais. Esse encontro, na verdade, seria um reencontro, pois toda criança, desde que nasce, é artista, faz arte. E, aos poucos, vai deixando de ser artista. Mas lindo é o reencontro.</p>
-                    
-                    <p>Atualmente, é graduando em Teatro pela Escola de Belas Artes da UFMG, em Belo Horizonte, com intercâmbio em Artes Audiovisuais pela Universidad Nacional de La Plata (UNLP), na Argentina.</p>
-                    
-                    <p>Atua como ator de teatro e cinema, pesquisador, arte-educador e escritor. Atua também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais.</p>
-                    
-                    <p>No teatro, atuou nos espetáculos <em>Quem Roubou o Branco do Mundo</em> (2019), <em>Quem Fala de Nós Tem Paixão</em> (2019) e <em>Esta Noite Mãe Coragem</em> (2023). No audiovisual, atuou como protagonista nos curtas <em>Aña Guasu</em> (2025), <em>7AM</em> (2025) e na websérie <em>Conexões Não Táteis</em> (2021), da qual também foi criador, roteirista e produtor (Lei Aldir Blanc). Trabalhou ainda como diretor de elenco em <em>Bella como las Fresias</em> (2025) e na cena curta <em>Ínterim</em> (2024), além de assistente de produção no curta <em>Ori Ojurere Mi</em> (FMC/BH).</p>
-                    
-                    <p>Já na literatura, Will Miller é autor do livro <em>Terra Funda</em> (Lei Paulo Gustavo, 2025), obra dramatúrgica que reafirma seu compromisso com memória, território e coletividade.</p>
-                    
-                    <p>É geraizeiro, filho de Roseane e Renato, e, desde cedo, Wily Leite Silva, de nome artístico Will Miller, entende que ser “mais um Silva”, na verdade, é carregar força e coragem no sangue para lutar pelos próprios sonhos e desfrutar a vida em coletivo. Assim, almeja novos ares para compor sua jovem trajetória.</p>
-                </div>
-
-                <div class="order-3 md:col-start-1 md:row-start-2 md:mt-10">
-                    <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Formação</h2>
-                    
-                    <div class="mb-10">
-                        <h3 class="text-xl font-semibold text-primary uppercase mb-6">Acadêmica</h3>
-                        <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
-                            <ul class="flex flex-col gap-5">
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Graduação em Teatro (2020-2026)</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Universidade Federal de Minas Gerais (UFMG)</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Intercâmbio em Artes Audiovisuais (2025)</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Universidad Nacional de La Plata - Argentina</p>
-                                </li>
-                            </ul>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary uppercase mb-6">Complementar</h3>
+                            <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
+                                <ul class="flex flex-col gap-5">
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Oficina de Dramaturgia</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Grupo Nós Três de Teatro, 2025</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Viver de Atuação (2.0) - Técnica Chubbuck</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Treinamento em atuação, 2024</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Teatro do Oprimido como Pedagogia em Museus</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Fundação Municipal de Cultura, 2024</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Seminário de Produção Cultural Preta de MG</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Instituto Aya de Arte e Cultura Negra, 2023</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Formação de Educadores (Muquifu)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Setor Educativo do MHNJB, 2023</p>
+                                    </li>
+                                    <li>
+                                        <h4 class="font-bold text-dark text-sm">Seminários de Produção Cultural (Itajaí)</h4>
+                                        <p class="text-xs font-roboto text-gray-500">Lei Federal de Incentivo à Cultura (2021) e ESG (2022)</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary uppercase mb-6">Complementar</h3>
-                        <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
-                            <ul class="flex flex-col gap-5">
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Oficina de Dramaturgia</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Grupo Nós Três de Teatro, 2025</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Viver de Atuação (2.0) - Técnica Chubbuck</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Treinamento em atuação, 2024</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Teatro do Oprimido como Pedagogia em Museus</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Fundação Municipal de Cultura, 2024</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Seminário de Produção Cultural Preta de MG</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Instituto Aya de Arte e Cultura Negra, 2023</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Formação de Educadores (Muquifu)</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Setor Educativo do MHNJB, 2023</p>
-                                </li>
-                                <li>
-                                    <h4 class="font-bold text-dark text-sm">Seminários de Produção Cultural (Itajaí)</h4>
-                                    <p class="text-xs font-roboto text-gray-500">Lei Federal de Incentivo à Cultura (2021) e ESG (2022)</p>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+
+                <div> 
+                    <div class="space-y-4 font-roboto text-dark leading-relaxed text-justify md:text-[15px]">
+                        <p><span class="text-primary font-bold text-lg">Will Miller</span> nasceu em 2002, em Januária (MG), e se encontrou com a arte através do Grupo de Teatro Fênix, em Januária, onde descobriu, na cena, uma potência para a expressão da própria voz e um espaço para fabular novos mundos possíveis, podendo viver diversos personagens em espetáculos locais. Esse encontro, na verdade, seria um reencontro, pois toda criança, desde que nasce, é artista, faz arte. E, aos poucos, vai deixando de ser artista. Mas lindo é o reencontro.</p>
+                        
+                        <p>Atualmente, é graduando em Teatro pela Escola de Belas Artes da UFMG, em Belo Horizonte, com intercâmbio em Artes Audiovisuais pela Universidad Nacional de La Plata (UNLP), na Argentina.</p>
+                        
+                        <p>Atua como ator de teatro e cinema, pesquisador, arte-educador e escritor. Atua também na produção de projetos culturais, com experiência em escrita criativa, leis de incentivo e espaços culturais.</p>
+                        
+                        <p>No teatro, atuou nos espetáculos <em>Quem Roubou o Branco do Mundo</em> (2019), <em>Quem Fala de Nós Tem Paixão</em> (2019) e <em>Esta Noite Mãe Coragem</em> (2023). No audiovisual, atuou como protagonista nos curtas <em>Aña Guasu</em> (2025), <em>7AM</em> (2025) e na websérie <em>Conexões Não Táteis</em> (2021), da qual também foi criador, roteirista e produtor (Lei Aldir Blanc). Trabalhou ainda como diretor de elenco em <em>Bella como las Fresias</em> (2025) e na cena curta <em>Ínterim</em> (2024), além de assistente de produção no curta <em>Ori Ojurere Mi</em> (FMC/BH).</p>
+                        
+                        <p>Já na literatura, Will Miller é autor do livro <em>Terra Funda</em> (Lei Paulo Gustavo, 2025), obra dramatúrgica que reafirma seu compromisso com memória, território e coletividade.</p>
+                        
+                        <p>É geraizeiro, filho de Roseane e Renato, e, desde cedo, Wily Leite Silva, de nome artístico Will Miller, entende que ser “mais um Silva”, na verdade, é carregar força e coragem no sangue para lutar pelos próprios sonhos e desfrutar a vida em coletivo. Assim, almeja novos ares para compor sua jovem trajetória.</p>
                     </div>
                 </div>
                 
-            </div> <div class="mb-16">
+            </div>
+
+            <div class="mb-16">
                 <h2 class="text-3xl font-bold uppercase text-dark mb-8 border-l-4 border-primary pl-4">Experiência Profissional</h2>
                 <div class="space-y-6">
                     <div class="bg-white p-6 organic-card shadow-sm border border-gray-100">
